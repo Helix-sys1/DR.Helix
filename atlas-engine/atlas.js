@@ -2319,3 +2319,53 @@ export async function startAtlas(settings) {
     .catch(onModelError);
   requestAnimationFrame(tick);
 }
+
+
+// تكبير صورة هيليكس
+(function () {
+  const css = `
+    .helix-avatar { cursor: zoom-in; }
+    .helix-photo-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .helix-photo-overlay img {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+  `;
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'helix-photo-overlay';
+    overlay.innerHTML = '<img src="../helix.jpg" alt="Dr. Helix">';
+    document.body.appendChild(overlay);
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList && e.target.classList.contains('helix-avatar')) {
+        overlay.style.display = 'flex';
+      }
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') overlay.style.display = 'none';
+    });
+  });
+})();
