@@ -2368,3 +2368,31 @@ export async function startAtlas(settings) {
     });
   });
 })();
+
+
+// نطق أسماء الأجزاء بالضغط مرتين
+(function () {
+  function speak(text) {
+    if (!('speechSynthesis' in window) || !text) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.85;
+    const voices = window.speechSynthesis.getVoices();
+    const v = voices.find(x => x.lang.startsWith('en') && /natural|google|microsoft/i.test(x.name))
+           || voices.find(x => x.lang.startsWith('en'));
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }
+  window.speakTerm = speak;
+
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+  }
+
+  document.addEventListener('dblclick', (e) => {
+    let t = (window.getSelection().toString() || '').trim();
+    if (!t && e.target) t = (e.target.innerText || '').trim();
+    if (t && t.length <= 60) speak(t);
+  });
+})();
