@@ -2320,7 +2320,6 @@ export async function startAtlas(settings) {
   requestAnimationFrame(tick);
 }
 
-
 // تكبير صورة هيليكس
 (function () {
   const css = `
