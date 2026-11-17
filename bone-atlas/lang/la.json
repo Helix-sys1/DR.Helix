@@ -1,0 +1,973 @@
+{
+	"note": "Bone names in Latin, as in Terminologia Anatomica. The rest of the page stays in English.",
+	"ui": {
+		"search_ph": "e.g. os hamatum, costa VII, capitate",
+		"hints_hint_on": "Latin names with the English name alongside, like “Patella sinistra (kneecap)”. Sinister = left, dexter = right.",
+		"hints_hint_off": "Latin names only, like “Patella sinistra” and “Phalanx distalis hallucis dextri”. Ribs, vertebrae and the metacarpals and metatarsals are numbered in Roman numerals; I is the thumb or big toe."
+	},
+	"units": {
+		"frontal": [
+			"Os frontale (frontal bone)",
+			"Os frontale"
+		],
+		"parietal_l": [
+			"Os parietale sinistrum (parietal bone)",
+			"Os parietale sinistrum"
+		],
+		"parietal_r": [
+			"Os parietale dextrum (parietal bone)",
+			"Os parietale dextrum"
+		],
+		"temporal_l": [
+			"Os temporale sinistrum (temporal bone)",
+			"Os temporale sinistrum"
+		],
+		"temporal_r": [
+			"Os temporale dextrum (temporal bone)",
+			"Os temporale dextrum"
+		],
+		"occipital": [
+			"Os occipitale (occipital bone)",
+			"Os occipitale"
+		],
+		"sphenoid": [
+			"Os sphenoidale (sphenoid)",
+			"Os sphenoidale"
+		],
+		"ethmoid": [
+			"Os ethmoidale (ethmoid)",
+			"Os ethmoidale"
+		],
+		"nasal_l": [
+			"Os nasale sinistrum (nasal bone)",
+			"Os nasale sinistrum"
+		],
+		"nasal_r": [
+			"Os nasale dextrum (nasal bone)",
+			"Os nasale dextrum"
+		],
+		"lacrimal_l": [
+			"Os lacrimale sinistrum (lacrimal bone)",
+			"Os lacrimale sinistrum"
+		],
+		"lacrimal_r": [
+			"Os lacrimale dextrum (lacrimal bone)",
+			"Os lacrimale dextrum"
+		],
+		"zygomatic_l": [
+			"Os zygomaticum sinistrum (cheekbone)",
+			"Os zygomaticum sinistrum"
+		],
+		"zygomatic_r": [
+			"Os zygomaticum dextrum (cheekbone)",
+			"Os zygomaticum dextrum"
+		],
+		"maxilla_l": [
+			"Maxilla sinistra (upper jaw)",
+			"Maxilla sinistra"
+		],
+		"maxilla_r": [
+			"Maxilla dextra (upper jaw)",
+			"Maxilla dextra"
+		],
+		"palatine_l": [
+			"Os palatinum sinistrum (palatine bone)",
+			"Os palatinum sinistrum"
+		],
+		"palatine_r": [
+			"Os palatinum dextrum (palatine bone)",
+			"Os palatinum dextrum"
+		],
+		"inf_concha_l": [
+			"Concha nasalis inferior sinistra (inferior nasal concha)",
+			"Concha nasalis inferior sinistra"
+		],
+		"inf_concha_r": [
+			"Concha nasalis inferior dextra (inferior nasal concha)",
+			"Concha nasalis inferior dextra"
+		],
+		"mandible": [
+			"Mandibula (lower jaw)",
+			"Mandibula"
+		],
+		"hyoid": [
+			"Os hyoideum (hyoid)",
+			"Os hyoideum"
+		],
+		"malleus_l": [
+			"Malleus sinister (hammer)",
+			"Malleus sinister"
+		],
+		"malleus_r": [
+			"Malleus dexter (hammer)",
+			"Malleus dexter"
+		],
+		"incus_l": [
+			"Incus sinistra (anvil)",
+			"Incus sinistra"
+		],
+		"incus_r": [
+			"Incus dextra (anvil)",
+			"Incus dextra"
+		],
+		"stapes_l": [
+			"Stapes sinister (stirrup)",
+			"Stapes sinister"
+		],
+		"stapes_r": [
+			"Stapes dexter (stirrup)",
+			"Stapes dexter"
+		],
+		"c3": [
+			"Vertebra cervicalis III (C3)",
+			"Vertebra cervicalis III"
+		],
+		"c4": [
+			"Vertebra cervicalis IV (C4)",
+			"Vertebra cervicalis IV"
+		],
+		"c5": [
+			"Vertebra cervicalis V (C5)",
+			"Vertebra cervicalis V"
+		],
+		"c6": [
+			"Vertebra cervicalis VI (C6)",
+			"Vertebra cervicalis VI"
+		],
+		"c7": [
+			"Vertebra cervicalis VII (C7)",
+			"Vertebra cervicalis VII"
+		],
+		"t1": [
+			"Vertebra thoracica I (T1)",
+			"Vertebra thoracica I"
+		],
+		"t2": [
+			"Vertebra thoracica II (T2)",
+			"Vertebra thoracica II"
+		],
+		"t3": [
+			"Vertebra thoracica III (T3)",
+			"Vertebra thoracica III"
+		],
+		"t4": [
+			"Vertebra thoracica IV (T4)",
+			"Vertebra thoracica IV"
+		],
+		"t5": [
+			"Vertebra thoracica V (T5)",
+			"Vertebra thoracica V"
+		],
+		"t6": [
+			"Vertebra thoracica VI (T6)",
+			"Vertebra thoracica VI"
+		],
+		"t7": [
+			"Vertebra thoracica VII (T7)",
+			"Vertebra thoracica VII"
+		],
+		"t8": [
+			"Vertebra thoracica VIII (T8)",
+			"Vertebra thoracica VIII"
+		],
+		"t9": [
+			"Vertebra thoracica IX (T9)",
+			"Vertebra thoracica IX"
+		],
+		"t10": [
+			"Vertebra thoracica X (T10)",
+			"Vertebra thoracica X"
+		],
+		"t11": [
+			"Vertebra thoracica XI (T11)",
+			"Vertebra thoracica XI"
+		],
+		"t12": [
+			"Vertebra thoracica XII (T12)",
+			"Vertebra thoracica XII"
+		],
+		"l1": [
+			"Vertebra lumbalis I (L1)",
+			"Vertebra lumbalis I"
+		],
+		"l2": [
+			"Vertebra lumbalis II (L2)",
+			"Vertebra lumbalis II"
+		],
+		"l3": [
+			"Vertebra lumbalis III (L3)",
+			"Vertebra lumbalis III"
+		],
+		"l4": [
+			"Vertebra lumbalis IV (L4)",
+			"Vertebra lumbalis IV"
+		],
+		"l5": [
+			"Vertebra lumbalis V (L5)",
+			"Vertebra lumbalis V"
+		],
+		"rib1_l": [
+			"Costa I sinistra (1st rib)",
+			"Costa I sinistra"
+		],
+		"rib1_r": [
+			"Costa I dextra (1st rib)",
+			"Costa I dextra"
+		],
+		"rib2_l": [
+			"Costa II sinistra (2nd rib)",
+			"Costa II sinistra"
+		],
+		"rib2_r": [
+			"Costa II dextra (2nd rib)",
+			"Costa II dextra"
+		],
+		"rib3_l": [
+			"Costa III sinistra (3rd rib)",
+			"Costa III sinistra"
+		],
+		"rib3_r": [
+			"Costa III dextra (3rd rib)",
+			"Costa III dextra"
+		],
+		"rib4_l": [
+			"Costa IV sinistra (4th rib)",
+			"Costa IV sinistra"
+		],
+		"rib4_r": [
+			"Costa IV dextra (4th rib)",
+			"Costa IV dextra"
+		],
+		"rib5_l": [
+			"Costa V sinistra (5th rib)",
+			"Costa V sinistra"
+		],
+		"rib5_r": [
+			"Costa V dextra (5th rib)",
+			"Costa V dextra"
+		],
+		"rib6_l": [
+			"Costa VI sinistra (6th rib)",
+			"Costa VI sinistra"
+		],
+		"rib6_r": [
+			"Costa VI dextra (6th rib)",
+			"Costa VI dextra"
+		],
+		"rib7_l": [
+			"Costa VII sinistra (7th rib)",
+			"Costa VII sinistra"
+		],
+		"rib7_r": [
+			"Costa VII dextra (7th rib)",
+			"Costa VII dextra"
+		],
+		"rib8_l": [
+			"Costa VIII sinistra (8th rib)",
+			"Costa VIII sinistra"
+		],
+		"rib8_r": [
+			"Costa VIII dextra (8th rib)",
+			"Costa VIII dextra"
+		],
+		"rib9_l": [
+			"Costa IX sinistra (9th rib)",
+			"Costa IX sinistra"
+		],
+		"rib9_r": [
+			"Costa IX dextra (9th rib)",
+			"Costa IX dextra"
+		],
+		"rib10_l": [
+			"Costa X sinistra (10th rib)",
+			"Costa X sinistra"
+		],
+		"rib10_r": [
+			"Costa X dextra (10th rib)",
+			"Costa X dextra"
+		],
+		"rib11_l": [
+			"Costa XI sinistra (11th rib)",
+			"Costa XI sinistra"
+		],
+		"rib11_r": [
+			"Costa XI dextra (11th rib)",
+			"Costa XI dextra"
+		],
+		"rib12_l": [
+			"Costa XII sinistra (12th rib)",
+			"Costa XII sinistra"
+		],
+		"rib12_r": [
+			"Costa XII dextra (12th rib)",
+			"Costa XII dextra"
+		],
+		"hip_l": [
+			"Os coxae sinistrum (hip bone)",
+			"Os coxae sinistrum"
+		],
+		"hip_r": [
+			"Os coxae dextrum (hip bone)",
+			"Os coxae dextrum"
+		],
+		"sacrum": [
+			"Os sacrum"
+		],
+		"coccyx": [
+			"Os coccygis (tailbone)",
+			"Os coccygis"
+		],
+		"clavicle_l": [
+			"Clavicula sinistra (collarbone)",
+			"Clavicula sinistra"
+		],
+		"clavicle_r": [
+			"Clavicula dextra (collarbone)",
+			"Clavicula dextra"
+		],
+		"scapula_l": [
+			"Scapula sinistra (shoulder blade)",
+			"Scapula sinistra"
+		],
+		"scapula_r": [
+			"Scapula dextra (shoulder blade)",
+			"Scapula dextra"
+		],
+		"humerus_l": [
+			"Humerus sinister"
+		],
+		"humerus_r": [
+			"Humerus dexter"
+		],
+		"radius_l": [
+			"Radius sinister"
+		],
+		"radius_r": [
+			"Radius dexter"
+		],
+		"ulna_l": [
+			"Ulna sinistra"
+		],
+		"ulna_r": [
+			"Ulna dextra"
+		],
+		"scaphoid_l": [
+			"Os scaphoideum sinistrum (scaphoid)",
+			"Os scaphoideum sinistrum"
+		],
+		"scaphoid_r": [
+			"Os scaphoideum dextrum (scaphoid)",
+			"Os scaphoideum dextrum"
+		],
+		"lunate_l": [
+			"Os lunatum sinistrum (lunate)",
+			"Os lunatum sinistrum"
+		],
+		"lunate_r": [
+			"Os lunatum dextrum (lunate)",
+			"Os lunatum dextrum"
+		],
+		"triquetrum_l": [
+			"Os triquetrum sinistrum (triquetrum)",
+			"Os triquetrum sinistrum"
+		],
+		"triquetrum_r": [
+			"Os triquetrum dextrum (triquetrum)",
+			"Os triquetrum dextrum"
+		],
+		"pisiform_l": [
+			"Os pisiforme sinistrum (pisiform)",
+			"Os pisiforme sinistrum"
+		],
+		"pisiform_r": [
+			"Os pisiforme dextrum (pisiform)",
+			"Os pisiforme dextrum"
+		],
+		"hamate_l": [
+			"Os hamatum sinistrum (hamate)",
+			"Os hamatum sinistrum"
+		],
+		"hamate_r": [
+			"Os hamatum dextrum (hamate)",
+			"Os hamatum dextrum"
+		],
+		"capitate_l": [
+			"Os capitatum sinistrum (capitate)",
+			"Os capitatum sinistrum"
+		],
+		"capitate_r": [
+			"Os capitatum dextrum (capitate)",
+			"Os capitatum dextrum"
+		],
+		"trapezoid_l": [
+			"Os trapezoideum sinistrum (trapezoid)",
+			"Os trapezoideum sinistrum"
+		],
+		"trapezoid_r": [
+			"Os trapezoideum dextrum (trapezoid)",
+			"Os trapezoideum dextrum"
+		],
+		"trapezium_l": [
+			"Os trapezium sinistrum (trapezium)",
+			"Os trapezium sinistrum"
+		],
+		"trapezium_r": [
+			"Os trapezium dextrum (trapezium)",
+			"Os trapezium dextrum"
+		],
+		"mc1_l": [
+			"Os metacarpi I sinistrum (thumb)",
+			"Os metacarpi I sinistrum"
+		],
+		"mc1_r": [
+			"Os metacarpi I dextrum (thumb)",
+			"Os metacarpi I dextrum"
+		],
+		"mc2_l": [
+			"Os metacarpi II sinistrum (index finger)",
+			"Os metacarpi II sinistrum"
+		],
+		"mc2_r": [
+			"Os metacarpi II dextrum (index finger)",
+			"Os metacarpi II dextrum"
+		],
+		"mc3_l": [
+			"Os metacarpi III sinistrum (middle finger)",
+			"Os metacarpi III sinistrum"
+		],
+		"mc3_r": [
+			"Os metacarpi III dextrum (middle finger)",
+			"Os metacarpi III dextrum"
+		],
+		"mc4_l": [
+			"Os metacarpi IV sinistrum (ring finger)",
+			"Os metacarpi IV sinistrum"
+		],
+		"mc4_r": [
+			"Os metacarpi IV dextrum (ring finger)",
+			"Os metacarpi IV dextrum"
+		],
+		"mc5_l": [
+			"Os metacarpi V sinistrum (little finger)",
+			"Os metacarpi V sinistrum"
+		],
+		"mc5_r": [
+			"Os metacarpi V dextrum (little finger)",
+			"Os metacarpi V dextrum"
+		],
+		"pph1_hand_l": [
+			"Phalanx proximalis pollicis sinistri (thumb)",
+			"Phalanx proximalis pollicis sinistri"
+		],
+		"pph1_hand_r": [
+			"Phalanx proximalis pollicis dextri (thumb)",
+			"Phalanx proximalis pollicis dextri"
+		],
+		"pph2_hand_l": [
+			"Phalanx proximalis indicis sinistri (index finger)",
+			"Phalanx proximalis indicis sinistri"
+		],
+		"pph2_hand_r": [
+			"Phalanx proximalis indicis dextri (index finger)",
+			"Phalanx proximalis indicis dextri"
+		],
+		"pph3_hand_l": [
+			"Phalanx proximalis digiti medii sinistri (middle finger)",
+			"Phalanx proximalis digiti medii sinistri"
+		],
+		"pph3_hand_r": [
+			"Phalanx proximalis digiti medii dextri (middle finger)",
+			"Phalanx proximalis digiti medii dextri"
+		],
+		"pph4_hand_l": [
+			"Phalanx proximalis digiti anularis sinistri (ring finger)",
+			"Phalanx proximalis digiti anularis sinistri"
+		],
+		"pph4_hand_r": [
+			"Phalanx proximalis digiti anularis dextri (ring finger)",
+			"Phalanx proximalis digiti anularis dextri"
+		],
+		"pph5_hand_l": [
+			"Phalanx proximalis digiti minimi manus sinistrae (little finger)",
+			"Phalanx proximalis digiti minimi manus sinistrae"
+		],
+		"pph5_hand_r": [
+			"Phalanx proximalis digiti minimi manus dextrae (little finger)",
+			"Phalanx proximalis digiti minimi manus dextrae"
+		],
+		"mph2_hand_l": [
+			"Phalanx media indicis sinistri (index finger)",
+			"Phalanx media indicis sinistri"
+		],
+		"mph2_hand_r": [
+			"Phalanx media indicis dextri (index finger)",
+			"Phalanx media indicis dextri"
+		],
+		"mph3_hand_l": [
+			"Phalanx media digiti medii sinistri (middle finger)",
+			"Phalanx media digiti medii sinistri"
+		],
+		"mph3_hand_r": [
+			"Phalanx media digiti medii dextri (middle finger)",
+			"Phalanx media digiti medii dextri"
+		],
+		"mph4_hand_l": [
+			"Phalanx media digiti anularis sinistri (ring finger)",
+			"Phalanx media digiti anularis sinistri"
+		],
+		"mph4_hand_r": [
+			"Phalanx media digiti anularis dextri (ring finger)",
+			"Phalanx media digiti anularis dextri"
+		],
+		"mph5_hand_l": [
+			"Phalanx media digiti minimi manus sinistrae (little finger)",
+			"Phalanx media digiti minimi manus sinistrae"
+		],
+		"mph5_hand_r": [
+			"Phalanx media digiti minimi manus dextrae (little finger)",
+			"Phalanx media digiti minimi manus dextrae"
+		],
+		"dph1_hand_l": [
+			"Phalanx distalis pollicis sinistri (thumb)",
+			"Phalanx distalis pollicis sinistri"
+		],
+		"dph1_hand_r": [
+			"Phalanx distalis pollicis dextri (thumb)",
+			"Phalanx distalis pollicis dextri"
+		],
+		"dph2_hand_l": [
+			"Phalanx distalis indicis sinistri (index finger)",
+			"Phalanx distalis indicis sinistri"
+		],
+		"dph2_hand_r": [
+			"Phalanx distalis indicis dextri (index finger)",
+			"Phalanx distalis indicis dextri"
+		],
+		"dph3_hand_l": [
+			"Phalanx distalis digiti medii sinistri (middle finger)",
+			"Phalanx distalis digiti medii sinistri"
+		],
+		"dph3_hand_r": [
+			"Phalanx distalis digiti medii dextri (middle finger)",
+			"Phalanx distalis digiti medii dextri"
+		],
+		"dph4_hand_l": [
+			"Phalanx distalis digiti anularis sinistri (ring finger)",
+			"Phalanx distalis digiti anularis sinistri"
+		],
+		"dph4_hand_r": [
+			"Phalanx distalis digiti anularis dextri (ring finger)",
+			"Phalanx distalis digiti anularis dextri"
+		],
+		"dph5_hand_l": [
+			"Phalanx distalis digiti minimi manus sinistrae (little finger)",
+			"Phalanx distalis digiti minimi manus sinistrae"
+		],
+		"dph5_hand_r": [
+			"Phalanx distalis digiti minimi manus dextrae (little finger)",
+			"Phalanx distalis digiti minimi manus dextrae"
+		],
+		"femur_l": [
+			"Femur sinistrum (thigh bone)",
+			"Femur sinistrum"
+		],
+		"femur_r": [
+			"Femur dextrum (thigh bone)",
+			"Femur dextrum"
+		],
+		"patella_l": [
+			"Patella sinistra (kneecap)",
+			"Patella sinistra"
+		],
+		"patella_r": [
+			"Patella dextra (kneecap)",
+			"Patella dextra"
+		],
+		"tibia_l": [
+			"Tibia sinistra (shin bone)",
+			"Tibia sinistra"
+		],
+		"tibia_r": [
+			"Tibia dextra (shin bone)",
+			"Tibia dextra"
+		],
+		"fibula_l": [
+			"Fibula sinistra"
+		],
+		"fibula_r": [
+			"Fibula dextra"
+		],
+		"talus_l": [
+			"Talus sinister"
+		],
+		"talus_r": [
+			"Talus dexter"
+		],
+		"calcaneus_l": [
+			"Calcaneus sinister (heel bone)",
+			"Calcaneus sinister"
+		],
+		"calcaneus_r": [
+			"Calcaneus dexter (heel bone)",
+			"Calcaneus dexter"
+		],
+		"navicular_l": [
+			"Os naviculare sinistrum (navicular)",
+			"Os naviculare sinistrum"
+		],
+		"navicular_r": [
+			"Os naviculare dextrum (navicular)",
+			"Os naviculare dextrum"
+		],
+		"med_cuneiform_l": [
+			"Os cuneiforme mediale sinistrum (medial cuneiform)",
+			"Os cuneiforme mediale sinistrum"
+		],
+		"med_cuneiform_r": [
+			"Os cuneiforme mediale dextrum (medial cuneiform)",
+			"Os cuneiforme mediale dextrum"
+		],
+		"int_cuneiform_l": [
+			"Os cuneiforme intermedium sinistrum (intermediate cuneiform)",
+			"Os cuneiforme intermedium sinistrum"
+		],
+		"int_cuneiform_r": [
+			"Os cuneiforme intermedium dextrum (intermediate cuneiform)",
+			"Os cuneiforme intermedium dextrum"
+		],
+		"lat_cuneiform_l": [
+			"Os cuneiforme laterale sinistrum (lateral cuneiform)",
+			"Os cuneiforme laterale sinistrum"
+		],
+		"lat_cuneiform_r": [
+			"Os cuneiforme laterale dextrum (lateral cuneiform)",
+			"Os cuneiforme laterale dextrum"
+		],
+		"cuboid_l": [
+			"Os cuboideum sinistrum (cuboid)",
+			"Os cuboideum sinistrum"
+		],
+		"cuboid_r": [
+			"Os cuboideum dextrum (cuboid)",
+			"Os cuboideum dextrum"
+		],
+		"mt1_l": [
+			"Os metatarsi I sinistrum (big toe)",
+			"Os metatarsi I sinistrum"
+		],
+		"mt1_r": [
+			"Os metatarsi I dextrum (big toe)",
+			"Os metatarsi I dextrum"
+		],
+		"mt2_l": [
+			"Os metatarsi II sinistrum (2nd toe)",
+			"Os metatarsi II sinistrum"
+		],
+		"mt2_r": [
+			"Os metatarsi II dextrum (2nd toe)",
+			"Os metatarsi II dextrum"
+		],
+		"mt3_l": [
+			"Os metatarsi III sinistrum (3rd toe)",
+			"Os metatarsi III sinistrum"
+		],
+		"mt3_r": [
+			"Os metatarsi III dextrum (3rd toe)",
+			"Os metatarsi III dextrum"
+		],
+		"mt4_l": [
+			"Os metatarsi IV sinistrum (4th toe)",
+			"Os metatarsi IV sinistrum"
+		],
+		"mt4_r": [
+			"Os metatarsi IV dextrum (4th toe)",
+			"Os metatarsi IV dextrum"
+		],
+		"mt5_l": [
+			"Os metatarsi V sinistrum (little toe)",
+			"Os metatarsi V sinistrum"
+		],
+		"mt5_r": [
+			"Os metatarsi V dextrum (little toe)",
+			"Os metatarsi V dextrum"
+		],
+		"pph1_foot_l": [
+			"Phalanx proximalis hallucis sinistri (big toe)",
+			"Phalanx proximalis hallucis sinistri"
+		],
+		"pph1_foot_r": [
+			"Phalanx proximalis hallucis dextri (big toe)",
+			"Phalanx proximalis hallucis dextri"
+		],
+		"pph2_foot_l": [
+			"Phalanx proximalis digiti secundi pedis sinistri (2nd toe)",
+			"Phalanx proximalis digiti secundi pedis sinistri"
+		],
+		"pph2_foot_r": [
+			"Phalanx proximalis digiti secundi pedis dextri (2nd toe)",
+			"Phalanx proximalis digiti secundi pedis dextri"
+		],
+		"pph3_foot_l": [
+			"Phalanx proximalis digiti tertii pedis sinistri (3rd toe)",
+			"Phalanx proximalis digiti tertii pedis sinistri"
+		],
+		"pph3_foot_r": [
+			"Phalanx proximalis digiti tertii pedis dextri (3rd toe)",
+			"Phalanx proximalis digiti tertii pedis dextri"
+		],
+		"pph4_foot_l": [
+			"Phalanx proximalis digiti quarti pedis sinistri (4th toe)",
+			"Phalanx proximalis digiti quarti pedis sinistri"
+		],
+		"pph4_foot_r": [
+			"Phalanx proximalis digiti quarti pedis dextri (4th toe)",
+			"Phalanx proximalis digiti quarti pedis dextri"
+		],
+		"pph5_foot_l": [
+			"Phalanx proximalis digiti minimi pedis sinistri (little toe)",
+			"Phalanx proximalis digiti minimi pedis sinistri"
+		],
+		"pph5_foot_r": [
+			"Phalanx proximalis digiti minimi pedis dextri (little toe)",
+			"Phalanx proximalis digiti minimi pedis dextri"
+		],
+		"mph2_foot_l": [
+			"Phalanx media digiti secundi pedis sinistri (2nd toe)",
+			"Phalanx media digiti secundi pedis sinistri"
+		],
+		"mph2_foot_r": [
+			"Phalanx media digiti secundi pedis dextri (2nd toe)",
+			"Phalanx media digiti secundi pedis dextri"
+		],
+		"mph3_foot_l": [
+			"Phalanx media digiti tertii pedis sinistri (3rd toe)",
+			"Phalanx media digiti tertii pedis sinistri"
+		],
+		"mph3_foot_r": [
+			"Phalanx media digiti tertii pedis dextri (3rd toe)",
+			"Phalanx media digiti tertii pedis dextri"
+		],
+		"mph4_foot_l": [
+			"Phalanx media digiti quarti pedis sinistri (4th toe)",
+			"Phalanx media digiti quarti pedis sinistri"
+		],
+		"mph4_foot_r": [
+			"Phalanx media digiti quarti pedis dextri (4th toe)",
+			"Phalanx media digiti quarti pedis dextri"
+		],
+		"mph5_foot_l": [
+			"Phalanx media digiti minimi pedis sinistri (little toe)",
+			"Phalanx media digiti minimi pedis sinistri"
+		],
+		"mph5_foot_r": [
+			"Phalanx media digiti minimi pedis dextri (little toe)",
+			"Phalanx media digiti minimi pedis dextri"
+		],
+		"dph1_foot_l": [
+			"Phalanx distalis hallucis sinistri (big toe)",
+			"Phalanx distalis hallucis sinistri"
+		],
+		"dph1_foot_r": [
+			"Phalanx distalis hallucis dextri (big toe)",
+			"Phalanx distalis hallucis dextri"
+		],
+		"dph2_foot_l": [
+			"Phalanx distalis digiti secundi pedis sinistri (2nd toe)",
+			"Phalanx distalis digiti secundi pedis sinistri"
+		],
+		"dph2_foot_r": [
+			"Phalanx distalis digiti secundi pedis dextri (2nd toe)",
+			"Phalanx distalis digiti secundi pedis dextri"
+		],
+		"dph3_foot_l": [
+			"Phalanx distalis digiti tertii pedis sinistri (3rd toe)",
+			"Phalanx distalis digiti tertii pedis sinistri"
+		],
+		"dph3_foot_r": [
+			"Phalanx distalis digiti tertii pedis dextri (3rd toe)",
+			"Phalanx distalis digiti tertii pedis dextri"
+		],
+		"dph4_foot_l": [
+			"Phalanx distalis digiti quarti pedis sinistri (4th toe)",
+			"Phalanx distalis digiti quarti pedis sinistri"
+		],
+		"dph4_foot_r": [
+			"Phalanx distalis digiti quarti pedis dextri (4th toe)",
+			"Phalanx distalis digiti quarti pedis dextri"
+		],
+		"dph5_foot_l": [
+			"Phalanx distalis digiti minimi pedis sinistri (little toe)",
+			"Phalanx distalis digiti minimi pedis sinistri"
+		],
+		"dph5_foot_r": [
+			"Phalanx distalis digiti minimi pedis dextri (little toe)",
+			"Phalanx distalis digiti minimi pedis dextri"
+		]
+	},
+	"groups": {
+		"frontal": [
+			"Os frontale (frontal bone)",
+			"Os frontale"
+		],
+		"parietal": [
+			"Os parietale (parietal bone)",
+			"Os parietale"
+		],
+		"temporal": [
+			"Os temporale (temporal bone)",
+			"Os temporale"
+		],
+		"occipital": [
+			"Os occipitale (occipital bone)",
+			"Os occipitale"
+		],
+		"sphenoid": [
+			"Os sphenoidale (sphenoid)",
+			"Os sphenoidale"
+		],
+		"ethmoid": [
+			"Os ethmoidale (ethmoid)",
+			"Os ethmoidale"
+		],
+		"nasal": [
+			"Os nasale (nasal bone)",
+			"Os nasale"
+		],
+		"lacrimal": [
+			"Os lacrimale (lacrimal bone)",
+			"Os lacrimale"
+		],
+		"zygomatic": [
+			"Os zygomaticum (cheekbone)",
+			"Os zygomaticum"
+		],
+		"palatine": [
+			"Os palatinum (palatine bone)",
+			"Os palatinum"
+		],
+		"inf_concha": [
+			"Concha nasalis inferior (inferior nasal concha)",
+			"Concha nasalis inferior"
+		],
+		"mandible": [
+			"Mandibula (lower jaw)",
+			"Mandibula"
+		],
+		"hyoid": [
+			"Os hyoideum (hyoid)",
+			"Os hyoideum"
+		],
+		"cervical": [
+			"Vertebra cervicalis (C3–C7)"
+		],
+		"thoracic": [
+			"Vertebra thoracica (T1–T12)"
+		],
+		"lumbar": [
+			"Vertebra lumbalis (L1–L5)"
+		],
+		"rib": [
+			"Costa (rib)",
+			"Costa"
+		],
+		"hip": [
+			"Os coxae (hip bone)",
+			"Os coxae"
+		],
+		"sacrum": [
+			"Os sacrum"
+		],
+		"coccyx": [
+			"Os coccygis (tailbone)",
+			"Os coccygis"
+		],
+		"clavicle": [
+			"Clavicula (collarbone)",
+			"Clavicula"
+		],
+		"scaphoid": [
+			"Os scaphoideum (scaphoid)",
+			"Os scaphoideum"
+		],
+		"lunate": [
+			"Os lunatum (lunate)",
+			"Os lunatum"
+		],
+		"triquetrum": [
+			"Os triquetrum (triquetrum)",
+			"Os triquetrum"
+		],
+		"pisiform": [
+			"Os pisiforme (pisiform)",
+			"Os pisiforme"
+		],
+		"hamate": [
+			"Os hamatum (hamate)",
+			"Os hamatum"
+		],
+		"capitate": [
+			"Os capitatum (capitate)",
+			"Os capitatum"
+		],
+		"trapezoid": [
+			"Os trapezoideum (trapezoid)",
+			"Os trapezoideum"
+		],
+		"trapezium": [
+			"Os trapezium (trapezium)",
+			"Os trapezium"
+		],
+		"metacarpal": [
+			"Os metacarpi (metacarpal)",
+			"Os metacarpi"
+		],
+		"proximal_ph_hand": [
+			"Phalanx proximalis manus (finger)",
+			"Phalanx proximalis manus"
+		],
+		"middle_ph_hand": [
+			"Phalanx media manus (finger)",
+			"Phalanx media manus"
+		],
+		"distal_ph_hand": [
+			"Phalanx distalis manus (finger)",
+			"Phalanx distalis manus"
+		],
+		"navicular": [
+			"Os naviculare (navicular)",
+			"Os naviculare"
+		],
+		"med_cuneiform": [
+			"Os cuneiforme mediale (medial cuneiform)",
+			"Os cuneiforme mediale"
+		],
+		"int_cuneiform": [
+			"Os cuneiforme intermedium (intermediate cuneiform)",
+			"Os cuneiforme intermedium"
+		],
+		"lat_cuneiform": [
+			"Os cuneiforme laterale (lateral cuneiform)",
+			"Os cuneiforme laterale"
+		],
+		"cuboid": [
+			"Os cuboideum (cuboid)",
+			"Os cuboideum"
+		],
+		"metatarsal": [
+			"Os metatarsi (metatarsal)",
+			"Os metatarsi"
+		],
+		"proximal_ph_foot": [
+			"Phalanx proximalis pedis (toe)",
+			"Phalanx proximalis pedis"
+		],
+		"middle_ph_foot": [
+			"Phalanx media pedis (toe)",
+			"Phalanx media pedis"
+		],
+		"distal_ph_foot": [
+			"Phalanx distalis pedis (toe)",
+			"Phalanx distalis pedis"
+		]
+	}
+}

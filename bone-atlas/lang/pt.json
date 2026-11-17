@@ -1,0 +1,990 @@
+{
+	"ui": {
+		"canvas_aria": "Esqueleto 3D. Arraste para girar, role ou faça pinça para dar zoom e clique em um osso para selecioná-lo.",
+		"loading_name": "Esqueleto",
+		"review_hint": "Clique em qualquer osso para ver o nome.",
+		"voice_title": "Comandos de voz (V), só em inglês. Diga uma área, como “left foot”, “spine” ou “whole body”.",
+		"left_title": "O lado esquerdo do próprio esqueleto",
+		"right_title": "O lado direito do próprio esqueleto",
+		"look_left_title": "Olhar o lado esquerdo do esqueleto",
+		"look_right_title": "Olhar o lado direito do esqueleto",
+		"xray_title": "Ver através dos ossos e clicar nos que estão escondidos dentro de outros (X)",
+		"peel_title": "Clique em um osso para ocultá-lo e ver o que há embaixo. Shift+clique faz o mesmo.",
+		"view_hint_narrow": "O zoom só move a câmera; as perguntas não mudam. O raio-X permite tocar em ossos escondidos dentro de outros. “Ocultar” esconde o osso que você tocar.",
+		"bones": "Ossos",
+		"set_names": "60 nomes",
+		"set_all": "Todos os 206",
+		"find_bone": "Buscar um osso",
+		"search_ph": "ex.: hamato, 7ª costela, T4",
+		"what_all": "Mudar para os 206 ossos",
+		"what_names": "Mudar para os 60 nomes",
+		"ctx_tooth": "Isso é um dente. Dentes não são ossos, então não fazem parte dos 206.",
+		"ctx_cartilage": "Isso é cartilagem costal, que liga uma costela ao esterno. Não é osso.",
+		"ctx_disc": "Isso é um disco de cartilagem entre ossos, não um osso.",
+		"ctx_other": "Isso não é um dos 206 ossos.",
+		"thats_the_reveal": "Osso selecionado: {name}. Clique no osso que brilha.",
+		"show_hidden": {
+			"one": "Mostrar {n} osso oculto",
+			"other": "Mostrar {n} ossos ocultos"
+		},
+		"zoom_head": "Cabeça",
+		"zoom_ears": "Ouvidos",
+		"zoom_spine": "Coluna",
+		"zoom_ribcage": "Costelas",
+		"zoom_cervical": "Coluna cervical",
+		"zoom_thoracic": "Coluna torácica",
+		"zoom_lumbar": "Coluna lombar",
+		"one_ear": [
+			"Ouvido esquerdo",
+			"Ouvido direito"
+		],
+		"voice_listening": "Ouvindo… em inglês: “left foot”, “spine”, “whole body”",
+		"study_meta": "{i} de {n} · ← → ou clique em um osso",
+		"no_bones": "Nenhum osso nesta seleção",
+		"reveal_eyebrow": "Aqui está. Clique no osso que brilha",
+		"rail_title": "Uma região de cada vez",
+		"hint_study": "Percorra os ossos com as setas ou clique em qualquer osso para ver o nome. Sem pontuação.",
+		"hint_practice": "Encontre cada osso. Os erros voltam algumas perguntas depois, até você acertar.",
+		"hint_test": "Cada osso uma vez, cronometrado e sem ajuda. Sua melhor pontuação fica salva neste navegador.",
+		"hints_hint_on": "Os nomes incluem ajudas do dia a dia, como “Patela (rótula)” e “5º metacarpal (dedo mínimo)”.",
+		"hints_hint_off": "Só nomes técnicos, como “Patela” e “Falange distal do 5º dedo do pé”. Os dedos são numerados a partir do polegar e do dedão (1º).",
+		"toast_hints_off": "Dicas desativadas: só nomes técnicos",
+		"peel_on": "Ocultar ativado: clicar em um osso o esconde.",
+		"keys_common": "<kbd>1</kbd>–<kbd>0</kbd> zoom (de novo para a esquerda, depois a direita) · <kbd>Esc</kbd> afastar · <kbd>V</kbd> comandos de voz (em inglês) · <kbd>H</kbd> dicas · <kbd>X</kbd> raio-X · <kbd>C</kbd> visão limpa · <kbd>R</kbd> reenquadrar"
+	},
+	"units": {
+		"frontal": [
+			"Osso frontal"
+		],
+		"parietal_l": [
+			"Osso parietal esquerdo"
+		],
+		"parietal_r": [
+			"Osso parietal direito"
+		],
+		"temporal_l": [
+			"Osso temporal esquerdo"
+		],
+		"temporal_r": [
+			"Osso temporal direito"
+		],
+		"occipital": [
+			"Osso occipital"
+		],
+		"sphenoid": [
+			"Osso esfenoide"
+		],
+		"ethmoid": [
+			"Osso etmoide"
+		],
+		"nasal_l": [
+			"Osso nasal esquerdo"
+		],
+		"nasal_r": [
+			"Osso nasal direito"
+		],
+		"lacrimal_l": [
+			"Osso lacrimal esquerdo"
+		],
+		"lacrimal_r": [
+			"Osso lacrimal direito"
+		],
+		"zygomatic_l": [
+			"Osso zigomático esquerdo (maçã do rosto)",
+			"Osso zigomático esquerdo"
+		],
+		"zygomatic_r": [
+			"Osso zigomático direito (maçã do rosto)",
+			"Osso zigomático direito"
+		],
+		"maxilla_l": [
+			"Maxila esquerda"
+		],
+		"maxilla_r": [
+			"Maxila direita"
+		],
+		"palatine_l": [
+			"Osso palatino esquerdo"
+		],
+		"palatine_r": [
+			"Osso palatino direito"
+		],
+		"inf_concha_l": [
+			"Concha nasal inferior esquerda"
+		],
+		"inf_concha_r": [
+			"Concha nasal inferior direita"
+		],
+		"vomer": [
+			"Vômer"
+		],
+		"mandible": [
+			"Mandíbula"
+		],
+		"hyoid": [
+			"Osso hioide"
+		],
+		"malleus_l": [
+			"Martelo esquerdo"
+		],
+		"malleus_r": [
+			"Martelo direito"
+		],
+		"incus_l": [
+			"Bigorna esquerda"
+		],
+		"incus_r": [
+			"Bigorna direita"
+		],
+		"stapes_l": [
+			"Estribo esquerdo"
+		],
+		"stapes_r": [
+			"Estribo direito"
+		],
+		"c2": [
+			"Áxis (C2)"
+		],
+		"c3": [
+			"Vértebra C3"
+		],
+		"c4": [
+			"Vértebra C4"
+		],
+		"c5": [
+			"Vértebra C5"
+		],
+		"c6": [
+			"Vértebra C6"
+		],
+		"c7": [
+			"Vértebra C7"
+		],
+		"t1": [
+			"Vértebra T1"
+		],
+		"t2": [
+			"Vértebra T2"
+		],
+		"t3": [
+			"Vértebra T3"
+		],
+		"t4": [
+			"Vértebra T4"
+		],
+		"t5": [
+			"Vértebra T5"
+		],
+		"t6": [
+			"Vértebra T6"
+		],
+		"t7": [
+			"Vértebra T7"
+		],
+		"t8": [
+			"Vértebra T8"
+		],
+		"t9": [
+			"Vértebra T9"
+		],
+		"t10": [
+			"Vértebra T10"
+		],
+		"t11": [
+			"Vértebra T11"
+		],
+		"t12": [
+			"Vértebra T12"
+		],
+		"l1": [
+			"Vértebra L1"
+		],
+		"l2": [
+			"Vértebra L2"
+		],
+		"l3": [
+			"Vértebra L3"
+		],
+		"l4": [
+			"Vértebra L4"
+		],
+		"l5": [
+			"Vértebra L5"
+		],
+		"sternum": [
+			"Esterno"
+		],
+		"rib1_l": [
+			"1ª costela esquerda"
+		],
+		"rib1_r": [
+			"1ª costela direita"
+		],
+		"rib2_l": [
+			"2ª costela esquerda"
+		],
+		"rib2_r": [
+			"2ª costela direita"
+		],
+		"rib3_l": [
+			"3ª costela esquerda"
+		],
+		"rib3_r": [
+			"3ª costela direita"
+		],
+		"rib4_l": [
+			"4ª costela esquerda"
+		],
+		"rib4_r": [
+			"4ª costela direita"
+		],
+		"rib5_l": [
+			"5ª costela esquerda"
+		],
+		"rib5_r": [
+			"5ª costela direita"
+		],
+		"rib6_l": [
+			"6ª costela esquerda"
+		],
+		"rib6_r": [
+			"6ª costela direita"
+		],
+		"rib7_l": [
+			"7ª costela esquerda"
+		],
+		"rib7_r": [
+			"7ª costela direita"
+		],
+		"rib8_l": [
+			"8ª costela esquerda"
+		],
+		"rib8_r": [
+			"8ª costela direita"
+		],
+		"rib9_l": [
+			"9ª costela esquerda"
+		],
+		"rib9_r": [
+			"9ª costela direita"
+		],
+		"rib10_l": [
+			"10ª costela esquerda"
+		],
+		"rib10_r": [
+			"10ª costela direita"
+		],
+		"rib11_l": [
+			"11ª costela esquerda"
+		],
+		"rib11_r": [
+			"11ª costela direita"
+		],
+		"rib12_l": [
+			"12ª costela esquerda"
+		],
+		"rib12_r": [
+			"12ª costela direita"
+		],
+		"hip_l": [
+			"Osso do quadril esquerdo"
+		],
+		"hip_r": [
+			"Osso do quadril direito"
+		],
+		"sacrum": [
+			"Sacro"
+		],
+		"coccyx": [
+			"Cóccix"
+		],
+		"clavicle_l": [
+			"Clavícula esquerda"
+		],
+		"clavicle_r": [
+			"Clavícula direita"
+		],
+		"scapula_l": [
+			"Escápula esquerda (omoplata)",
+			"Escápula esquerda"
+		],
+		"scapula_r": [
+			"Escápula direita (omoplata)",
+			"Escápula direita"
+		],
+		"humerus_l": [
+			"Úmero esquerdo"
+		],
+		"humerus_r": [
+			"Úmero direito"
+		],
+		"radius_l": [
+			"Rádio esquerdo"
+		],
+		"radius_r": [
+			"Rádio direito"
+		],
+		"ulna_l": [
+			"Ulna esquerda (cúbito)",
+			"Ulna esquerda"
+		],
+		"ulna_r": [
+			"Ulna direita (cúbito)",
+			"Ulna direita"
+		],
+		"scaphoid_l": [
+			"Escafoide esquerdo"
+		],
+		"scaphoid_r": [
+			"Escafoide direito"
+		],
+		"lunate_l": [
+			"Semilunar esquerdo"
+		],
+		"lunate_r": [
+			"Semilunar direito"
+		],
+		"triquetrum_l": [
+			"Piramidal esquerdo"
+		],
+		"triquetrum_r": [
+			"Piramidal direito"
+		],
+		"pisiform_l": [
+			"Pisiforme esquerdo"
+		],
+		"pisiform_r": [
+			"Pisiforme direito"
+		],
+		"hamate_l": [
+			"Hamato esquerdo"
+		],
+		"hamate_r": [
+			"Hamato direito"
+		],
+		"capitate_l": [
+			"Capitato esquerdo"
+		],
+		"capitate_r": [
+			"Capitato direito"
+		],
+		"trapezoid_l": [
+			"Trapezoide esquerdo"
+		],
+		"trapezoid_r": [
+			"Trapezoide direito"
+		],
+		"trapezium_l": [
+			"Trapézio esquerdo"
+		],
+		"trapezium_r": [
+			"Trapézio direito"
+		],
+		"mc1_l": [
+			"1º metacarpal esquerdo (polegar)",
+			"1º metacarpal esquerdo"
+		],
+		"mc1_r": [
+			"1º metacarpal direito (polegar)",
+			"1º metacarpal direito"
+		],
+		"mc2_l": [
+			"2º metacarpal esquerdo (indicador)",
+			"2º metacarpal esquerdo"
+		],
+		"mc2_r": [
+			"2º metacarpal direito (indicador)",
+			"2º metacarpal direito"
+		],
+		"mc3_l": [
+			"3º metacarpal esquerdo (dedo médio)",
+			"3º metacarpal esquerdo"
+		],
+		"mc3_r": [
+			"3º metacarpal direito (dedo médio)",
+			"3º metacarpal direito"
+		],
+		"mc4_l": [
+			"4º metacarpal esquerdo (anelar)",
+			"4º metacarpal esquerdo"
+		],
+		"mc4_r": [
+			"4º metacarpal direito (anelar)",
+			"4º metacarpal direito"
+		],
+		"mc5_l": [
+			"5º metacarpal esquerdo (dedo mínimo)",
+			"5º metacarpal esquerdo"
+		],
+		"mc5_r": [
+			"5º metacarpal direito (dedo mínimo)",
+			"5º metacarpal direito"
+		],
+		"pph1_hand_l": [
+			"Falange proximal esquerda — polegar",
+			"Falange proximal esquerda do 1º dedo da mão"
+		],
+		"pph1_hand_r": [
+			"Falange proximal direita — polegar",
+			"Falange proximal direita do 1º dedo da mão"
+		],
+		"pph2_hand_l": [
+			"Falange proximal esquerda — indicador",
+			"Falange proximal esquerda do 2º dedo da mão"
+		],
+		"pph2_hand_r": [
+			"Falange proximal direita — indicador",
+			"Falange proximal direita do 2º dedo da mão"
+		],
+		"pph3_hand_l": [
+			"Falange proximal esquerda — dedo médio",
+			"Falange proximal esquerda do 3º dedo da mão"
+		],
+		"pph3_hand_r": [
+			"Falange proximal direita — dedo médio",
+			"Falange proximal direita do 3º dedo da mão"
+		],
+		"pph4_hand_l": [
+			"Falange proximal esquerda — anelar",
+			"Falange proximal esquerda do 4º dedo da mão"
+		],
+		"pph4_hand_r": [
+			"Falange proximal direita — anelar",
+			"Falange proximal direita do 4º dedo da mão"
+		],
+		"pph5_hand_l": [
+			"Falange proximal esquerda — dedo mínimo",
+			"Falange proximal esquerda do 5º dedo da mão"
+		],
+		"pph5_hand_r": [
+			"Falange proximal direita — dedo mínimo",
+			"Falange proximal direita do 5º dedo da mão"
+		],
+		"mph2_hand_l": [
+			"Falange média esquerda — indicador",
+			"Falange média esquerda do 2º dedo da mão"
+		],
+		"mph2_hand_r": [
+			"Falange média direita — indicador",
+			"Falange média direita do 2º dedo da mão"
+		],
+		"mph3_hand_l": [
+			"Falange média esquerda — dedo médio",
+			"Falange média esquerda do 3º dedo da mão"
+		],
+		"mph3_hand_r": [
+			"Falange média direita — dedo médio",
+			"Falange média direita do 3º dedo da mão"
+		],
+		"mph4_hand_l": [
+			"Falange média esquerda — anelar",
+			"Falange média esquerda do 4º dedo da mão"
+		],
+		"mph4_hand_r": [
+			"Falange média direita — anelar",
+			"Falange média direita do 4º dedo da mão"
+		],
+		"mph5_hand_l": [
+			"Falange média esquerda — dedo mínimo",
+			"Falange média esquerda do 5º dedo da mão"
+		],
+		"mph5_hand_r": [
+			"Falange média direita — dedo mínimo",
+			"Falange média direita do 5º dedo da mão"
+		],
+		"dph1_hand_l": [
+			"Falange distal esquerda — polegar",
+			"Falange distal esquerda do 1º dedo da mão"
+		],
+		"dph1_hand_r": [
+			"Falange distal direita — polegar",
+			"Falange distal direita do 1º dedo da mão"
+		],
+		"dph2_hand_l": [
+			"Falange distal esquerda — indicador",
+			"Falange distal esquerda do 2º dedo da mão"
+		],
+		"dph2_hand_r": [
+			"Falange distal direita — indicador",
+			"Falange distal direita do 2º dedo da mão"
+		],
+		"dph3_hand_l": [
+			"Falange distal esquerda — dedo médio",
+			"Falange distal esquerda do 3º dedo da mão"
+		],
+		"dph3_hand_r": [
+			"Falange distal direita — dedo médio",
+			"Falange distal direita do 3º dedo da mão"
+		],
+		"dph4_hand_l": [
+			"Falange distal esquerda — anelar",
+			"Falange distal esquerda do 4º dedo da mão"
+		],
+		"dph4_hand_r": [
+			"Falange distal direita — anelar",
+			"Falange distal direita do 4º dedo da mão"
+		],
+		"dph5_hand_l": [
+			"Falange distal esquerda — dedo mínimo",
+			"Falange distal esquerda do 5º dedo da mão"
+		],
+		"dph5_hand_r": [
+			"Falange distal direita — dedo mínimo",
+			"Falange distal direita do 5º dedo da mão"
+		],
+		"femur_l": [
+			"Fêmur esquerdo"
+		],
+		"femur_r": [
+			"Fêmur direito"
+		],
+		"patella_l": [
+			"Patela esquerda (rótula)",
+			"Patela esquerda"
+		],
+		"patella_r": [
+			"Patela direita (rótula)",
+			"Patela direita"
+		],
+		"tibia_l": [
+			"Tíbia esquerda"
+		],
+		"tibia_r": [
+			"Tíbia direita"
+		],
+		"fibula_l": [
+			"Fíbula esquerda (perônio)",
+			"Fíbula esquerda"
+		],
+		"fibula_r": [
+			"Fíbula direita (perônio)",
+			"Fíbula direita"
+		],
+		"talus_l": [
+			"Tálus esquerdo (astrágalo)",
+			"Tálus esquerdo"
+		],
+		"talus_r": [
+			"Tálus direito (astrágalo)",
+			"Tálus direito"
+		],
+		"calcaneus_l": [
+			"Calcâneo esquerdo (osso do calcanhar)",
+			"Calcâneo esquerdo"
+		],
+		"calcaneus_r": [
+			"Calcâneo direito (osso do calcanhar)",
+			"Calcâneo direito"
+		],
+		"navicular_l": [
+			"Navicular esquerdo"
+		],
+		"navicular_r": [
+			"Navicular direito"
+		],
+		"med_cuneiform_l": [
+			"Cuneiforme medial esquerdo"
+		],
+		"med_cuneiform_r": [
+			"Cuneiforme medial direito"
+		],
+		"int_cuneiform_l": [
+			"Cuneiforme intermédio esquerdo"
+		],
+		"int_cuneiform_r": [
+			"Cuneiforme intermédio direito"
+		],
+		"lat_cuneiform_l": [
+			"Cuneiforme lateral esquerdo"
+		],
+		"lat_cuneiform_r": [
+			"Cuneiforme lateral direito"
+		],
+		"cuboid_l": [
+			"Cuboide esquerdo"
+		],
+		"cuboid_r": [
+			"Cuboide direito"
+		],
+		"mt1_l": [
+			"1º metatarsal esquerdo (dedão)",
+			"1º metatarsal esquerdo"
+		],
+		"mt1_r": [
+			"1º metatarsal direito (dedão)",
+			"1º metatarsal direito"
+		],
+		"mt2_l": [
+			"2º metatarsal esquerdo (2º dedo)",
+			"2º metatarsal esquerdo"
+		],
+		"mt2_r": [
+			"2º metatarsal direito (2º dedo)",
+			"2º metatarsal direito"
+		],
+		"mt3_l": [
+			"3º metatarsal esquerdo (3º dedo)",
+			"3º metatarsal esquerdo"
+		],
+		"mt3_r": [
+			"3º metatarsal direito (3º dedo)",
+			"3º metatarsal direito"
+		],
+		"mt4_l": [
+			"4º metatarsal esquerdo (4º dedo)",
+			"4º metatarsal esquerdo"
+		],
+		"mt4_r": [
+			"4º metatarsal direito (4º dedo)",
+			"4º metatarsal direito"
+		],
+		"mt5_l": [
+			"5º metatarsal esquerdo (dedo mínimo)",
+			"5º metatarsal esquerdo"
+		],
+		"mt5_r": [
+			"5º metatarsal direito (dedo mínimo)",
+			"5º metatarsal direito"
+		],
+		"pph1_foot_l": [
+			"Falange proximal esquerda — dedão do pé",
+			"Falange proximal esquerda do 1º dedo do pé"
+		],
+		"pph1_foot_r": [
+			"Falange proximal direita — dedão do pé",
+			"Falange proximal direita do 1º dedo do pé"
+		],
+		"pph2_foot_l": [
+			"Falange proximal esquerda — 2º dedo do pé",
+			"Falange proximal esquerda do 2º dedo do pé"
+		],
+		"pph2_foot_r": [
+			"Falange proximal direita — 2º dedo do pé",
+			"Falange proximal direita do 2º dedo do pé"
+		],
+		"pph3_foot_l": [
+			"Falange proximal esquerda — 3º dedo do pé",
+			"Falange proximal esquerda do 3º dedo do pé"
+		],
+		"pph3_foot_r": [
+			"Falange proximal direita — 3º dedo do pé",
+			"Falange proximal direita do 3º dedo do pé"
+		],
+		"pph4_foot_l": [
+			"Falange proximal esquerda — 4º dedo do pé",
+			"Falange proximal esquerda do 4º dedo do pé"
+		],
+		"pph4_foot_r": [
+			"Falange proximal direita — 4º dedo do pé",
+			"Falange proximal direita do 4º dedo do pé"
+		],
+		"pph5_foot_l": [
+			"Falange proximal esquerda — dedo mínimo do pé",
+			"Falange proximal esquerda do 5º dedo do pé"
+		],
+		"pph5_foot_r": [
+			"Falange proximal direita — dedo mínimo do pé",
+			"Falange proximal direita do 5º dedo do pé"
+		],
+		"mph2_foot_l": [
+			"Falange média esquerda — 2º dedo do pé",
+			"Falange média esquerda do 2º dedo do pé"
+		],
+		"mph2_foot_r": [
+			"Falange média direita — 2º dedo do pé",
+			"Falange média direita do 2º dedo do pé"
+		],
+		"mph3_foot_l": [
+			"Falange média esquerda — 3º dedo do pé",
+			"Falange média esquerda do 3º dedo do pé"
+		],
+		"mph3_foot_r": [
+			"Falange média direita — 3º dedo do pé",
+			"Falange média direita do 3º dedo do pé"
+		],
+		"mph4_foot_l": [
+			"Falange média esquerda — 4º dedo do pé",
+			"Falange média esquerda do 4º dedo do pé"
+		],
+		"mph4_foot_r": [
+			"Falange média direita — 4º dedo do pé",
+			"Falange média direita do 4º dedo do pé"
+		],
+		"mph5_foot_l": [
+			"Falange média esquerda — dedo mínimo do pé",
+			"Falange média esquerda do 5º dedo do pé"
+		],
+		"mph5_foot_r": [
+			"Falange média direita — dedo mínimo do pé",
+			"Falange média direita do 5º dedo do pé"
+		],
+		"dph1_foot_l": [
+			"Falange distal esquerda — dedão do pé",
+			"Falange distal esquerda do 1º dedo do pé"
+		],
+		"dph1_foot_r": [
+			"Falange distal direita — dedão do pé",
+			"Falange distal direita do 1º dedo do pé"
+		],
+		"dph2_foot_l": [
+			"Falange distal esquerda — 2º dedo do pé",
+			"Falange distal esquerda do 2º dedo do pé"
+		],
+		"dph2_foot_r": [
+			"Falange distal direita — 2º dedo do pé",
+			"Falange distal direita do 2º dedo do pé"
+		],
+		"dph3_foot_l": [
+			"Falange distal esquerda — 3º dedo do pé",
+			"Falange distal esquerda do 3º dedo do pé"
+		],
+		"dph3_foot_r": [
+			"Falange distal direita — 3º dedo do pé",
+			"Falange distal direita do 3º dedo do pé"
+		],
+		"dph4_foot_l": [
+			"Falange distal esquerda — 4º dedo do pé",
+			"Falange distal esquerda do 4º dedo do pé"
+		],
+		"dph4_foot_r": [
+			"Falange distal direita — 4º dedo do pé",
+			"Falange distal direita do 4º dedo do pé"
+		],
+		"dph5_foot_l": [
+			"Falange distal esquerda — dedo mínimo do pé",
+			"Falange distal esquerda do 5º dedo do pé"
+		],
+		"dph5_foot_r": [
+			"Falange distal direita — dedo mínimo do pé",
+			"Falange distal direita do 5º dedo do pé"
+		]
+	},
+	"groups": {
+		"frontal": [
+			"Osso frontal"
+		],
+		"parietal": [
+			"Osso parietal"
+		],
+		"temporal": [
+			"Osso temporal"
+		],
+		"occipital": [
+			"Osso occipital"
+		],
+		"sphenoid": [
+			"Osso esfenoide"
+		],
+		"ethmoid": [
+			"Osso etmoide"
+		],
+		"nasal": [
+			"Osso nasal"
+		],
+		"lacrimal": [
+			"Osso lacrimal"
+		],
+		"zygomatic": [
+			"Osso zigomático (maçã do rosto)",
+			"Osso zigomático"
+		],
+		"maxilla": [
+			"Maxila"
+		],
+		"palatine": [
+			"Osso palatino"
+		],
+		"inf_concha": [
+			"Concha nasal inferior"
+		],
+		"vomer": [
+			"Vômer"
+		],
+		"mandible": [
+			"Mandíbula"
+		],
+		"hyoid": [
+			"Osso hioide"
+		],
+		"malleus": [
+			"Martelo"
+		],
+		"incus": [
+			"Bigorna"
+		],
+		"stapes": [
+			"Estribo"
+		],
+		"axis": [
+			"Áxis (C2)"
+		],
+		"cervical": [
+			"Vértebra cervical (C3–C7)"
+		],
+		"thoracic": [
+			"Vértebra torácica (T1–T12)"
+		],
+		"lumbar": [
+			"Vértebra lombar (L1–L5)"
+		],
+		"sternum": [
+			"Esterno"
+		],
+		"rib": [
+			"Costela"
+		],
+		"hip": [
+			"Osso do quadril"
+		],
+		"sacrum": [
+			"Sacro"
+		],
+		"coccyx": [
+			"Cóccix"
+		],
+		"clavicle": [
+			"Clavícula"
+		],
+		"scapula": [
+			"Escápula (omoplata)",
+			"Escápula"
+		],
+		"humerus": [
+			"Úmero"
+		],
+		"radius": [
+			"Rádio"
+		],
+		"ulna": [
+			"Ulna (cúbito)",
+			"Ulna"
+		],
+		"scaphoid": [
+			"Escafoide"
+		],
+		"lunate": [
+			"Semilunar"
+		],
+		"triquetrum": [
+			"Piramidal"
+		],
+		"pisiform": [
+			"Pisiforme"
+		],
+		"hamate": [
+			"Hamato"
+		],
+		"capitate": [
+			"Capitato"
+		],
+		"trapezoid": [
+			"Trapezoide"
+		],
+		"trapezium": [
+			"Trapézio"
+		],
+		"proximal_ph_hand": [
+			"Falange proximal (mão)"
+		],
+		"middle_ph_hand": [
+			"Falange média (mão)"
+		],
+		"distal_ph_hand": [
+			"Falange distal (mão)"
+		],
+		"femur": [
+			"Fêmur"
+		],
+		"patella": [
+			"Patela (rótula)",
+			"Patela"
+		],
+		"tibia": [
+			"Tíbia"
+		],
+		"fibula": [
+			"Fíbula (perônio)",
+			"Fíbula"
+		],
+		"talus": [
+			"Tálus (astrágalo)",
+			"Tálus"
+		],
+		"calcaneus": [
+			"Calcâneo (osso do calcanhar)",
+			"Calcâneo"
+		],
+		"med_cuneiform": [
+			"Cuneiforme medial"
+		],
+		"int_cuneiform": [
+			"Cuneiforme intermédio"
+		],
+		"lat_cuneiform": [
+			"Cuneiforme lateral"
+		],
+		"cuboid": [
+			"Cuboide"
+		],
+		"proximal_ph_foot": [
+			"Falange proximal (pé)"
+		],
+		"middle_ph_foot": [
+			"Falange média (pé)"
+		],
+		"distal_ph_foot": [
+			"Falange distal (pé)"
+		]
+	},
+	"regions": {
+		"head": "Cabeça",
+		"torso": "Tronco",
+		"arm": "Braço",
+		"hand": "Mão",
+		"leg": "Perna",
+		"foot": "Pé"
+	},
+	"subs": {
+		"cranium": "Crânio",
+		"face": "Face e mandíbula",
+		"ear": "Ouvido",
+		"spine": "Coluna vertebral",
+		"ribcage": "Caixa torácica",
+		"pelvis": "Pelve",
+		"shoulder": "Ombro",
+		"armbones": "Braço e antebraço",
+		"carpals": "Carpo (punho)",
+		"metacarpals": "Metacarpo (palma)",
+		"fingers": "Dedos",
+		"thigh": "Coxa e joelho",
+		"lowerleg": "Parte inferior da perna",
+		"tarsals": "Tarso (tornozelo)",
+		"metatarsals": "Metatarso",
+		"toes": "Dedos do pé"
+	},
+	"tips": {
+		"all": "206 ossos em um esqueleto adulto típico.",
+		"head": "29 ossos: 22 no crânio, 6 nos ouvidos e o hioide.",
+		"cranium": "O crânio tem 8 ossos: frontal, occipital, esfenoide, etmoide, dois parietais e dois temporais.",
+		"face": "14 ossos na face: nasais, lacrimais, zigomáticos, maxilas, palatinos e conchas nasais inferiores (em pares), mais o vômer e a mandíbula. O hioide fica sob a mandíbula e não se articula com nenhum outro osso.",
+		"ear": "Martelo, bigorna e estribo levam o som do tímpano até o ouvido interno. O estribo é o menor osso do corpo.",
+		"torso": "53 ossos: 24 vértebras, 24 costelas, o esterno e a pelve (2 ossos do quadril, sacro e cóccix).",
+		"spine": "Café da manhã às 7, almoço às 12, jantar às 5: 7 vértebras cervicais, 12 torácicas e 5 lombares. C1 (atlas) sustenta a cabeça; C2 (áxis) permite que ela gire.",
+		"ribcage": "As costelas 1 a 7 são verdadeiras (ligadas diretamente ao esterno), as 8 a 10 são falsas (ligadas por cartilagem) e as 11 e 12 são flutuantes.",
+		"pelvis": "Cada osso do quadril é formado por três ossos fundidos: ílio, ísquio e púbis. O sacro é formado por 5 vértebras fundidas; o cóccix, geralmente por 4.",
+		"arm": "10 ossos: clavícula, escápula, úmero, rádio e ulna de cada lado.",
+		"shoulder": "A clavícula e a escápula formam a cintura escapular. A clavícula é a única ligação óssea entre o braço e o tronco.",
+		"armbones": "O rádio fica do lado do polegar. A ulna forma a ponta do cotovelo.",
+		"hand": "27 ossos em cada mão: 8 ossos do carpo, 5 metacarpais e 14 falanges.",
+		"carpals": "Fileira proximal (junto ao antebraço), do polegar ao dedo mínimo: escafoide, semilunar, piramidal, pisiforme. Fileira distal (junto aos dedos), do dedo mínimo ao polegar: hamato, capitato, trapezoide, trapézio.",
+		"metacarpals": "Os metacarpais são numerados de 1 a 5, a partir do polegar.",
+		"fingers": "Cada dedo tem uma falange proximal, uma média e uma distal. O polegar não tem falange média, por isso cada mão tem 14.",
+		"leg": "8 ossos: fêmur, patela, tíbia e fíbula de cada lado.",
+		"thigh": "O fêmur é o osso mais longo e mais forte do corpo. A patela (rótula) é o maior osso sesamoide, um osso que se forma dentro de um tendão.",
+		"lowerleg": "A tíbia sustenta o peso do corpo. A fíbula é o osso fino da parte de fora da perna.",
+		"foot": "26 ossos em cada pé: 7 ossos do tarso, 5 metatarsais e 14 falanges.",
+		"tarsals": "7 ossos: tálus, calcâneo, navicular, cuboide e três cuneiformes (medial, intermédio e lateral).",
+		"metatarsals": "Os metatarsais são numerados de 1 a 5, a partir do dedão.",
+		"toes": "Como na mão: falanges proximal, média e distal, sem falange média no dedão. 14 em cada pé."
+	}
+}

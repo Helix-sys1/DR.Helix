@@ -1,0 +1,1007 @@
+{
+	"ui": {
+		"canvas_aria": "Squelette 3D. Faites glisser pour pivoter, faites défiler ou pincez pour zoomer, cliquez sur un os pour le sélectionner.",
+		"loading_name": "Squelette",
+		"review_hint": "Cliquez sur un os pour voir son nom.",
+		"voice_title": "Commandes vocales (V), en anglais uniquement. Dites une zone, par exemple « left foot », « spine » ou « whole body ».",
+		"left_title": "La gauche du squelette lui-même",
+		"right_title": "La droite du squelette lui-même",
+		"look_left_title": "Regarder le côté gauche du squelette",
+		"look_right_title": "Regarder le côté droit du squelette",
+		"xray_title": "Voir à travers les os et cliquer sur ceux cachés à l’intérieur d’autres (X)",
+		"peel_title": "Cliquez sur un os pour le masquer et voir ce qu’il y a dessous. Maj+clic fait de même.",
+		"view_hint_narrow": "Le zoom ne fait que déplacer la caméra ; les questions ne changent pas. Les rayons X permettent de toucher les os cachés dans d’autres. « Masquer » cache l’os que vous touchez.",
+		"bones": "Os",
+		"set_names": "60 noms",
+		"set_all": "Les 206",
+		"find_bone": "Trouver un os",
+		"search_ph": "ex. : hamatum, 7e côte, T4",
+		"what_all": "Passer aux 206 os",
+		"what_names": "Passer aux 60 noms",
+		"ctx_tooth": "C’est une dent. Les dents ne sont pas des os : elles ne font donc pas partie des 206.",
+		"ctx_cartilage": "C’est un cartilage costal, qui relie une côte au sternum. Ce n’est pas un os.",
+		"ctx_disc": "C’est un disque de cartilage entre deux os, pas un os.",
+		"ctx_other": "Ce n’est pas l’un des 206 os.",
+		"thats_the_reveal": "Os sélectionné : {name}. Cliquez sur l’os qui brille.",
+		"show_hidden": {
+			"one": "Afficher {n} os masqué",
+			"other": "Afficher {n} os masqués"
+		},
+		"zoom_head": "Tête",
+		"zoom_ears": "Oreilles",
+		"zoom_spine": "Colonne",
+		"zoom_ribcage": "Côtes",
+		"zoom_cervical": "Colonne cervicale",
+		"zoom_thoracic": "Colonne thoracique",
+		"zoom_lumbar": "Colonne lombaire",
+		"one_ear": [
+			"Oreille gauche",
+			"Oreille droite"
+		],
+		"voice_listening": "À l’écoute… en anglais : « left foot », « spine », « whole body »",
+		"study_meta": "{i} sur {n} · ← → ou cliquez sur un os",
+		"no_bones": "Aucun os dans cette sélection",
+		"reveal_eyebrow": "Le voici. Cliquez sur l’os qui brille",
+		"rail_title": "Une région à la fois",
+		"hint_study": "Parcourez les os avec les flèches ou cliquez sur un os pour voir son nom. Pas de score.",
+		"hint_practice": "Trouvez chaque os. Les erreurs reviennent quelques questions plus tard, jusqu’à ce que vous les réussissiez.",
+		"hint_test": "Chaque os une fois, chronométré, sans aide. Votre meilleur score est enregistré dans ce navigateur.",
+		"hints_hint_on": "Les noms incluent des repères courants, comme « Patella (rotule) » et « 5e métacarpien (auriculaire) ».",
+		"hints_hint_off": "Noms techniques uniquement, comme « Patella » et « Phalange distale du 5e orteil ». Les doigts et les orteils sont numérotés à partir du pouce et du gros orteil (1er).",
+		"toast_hints_off": "Indices désactivés : noms techniques uniquement",
+		"peel_on": "Masquage activé : cliquer sur un os le masque.",
+		"keys_common": "<kbd>1</kbd>–<kbd>0</kbd> zoom (encore pour la gauche, puis la droite) · <kbd>Échap</kbd> dézoomer · <kbd>V</kbd> commandes vocales (en anglais) · <kbd>H</kbd> indices · <kbd>X</kbd> rayons X · <kbd>C</kbd> vue épurée · <kbd>R</kbd> recadrer"
+	},
+	"units": {
+		"frontal": [
+			"Os frontal"
+		],
+		"parietal_l": [
+			"Os pariétal gauche"
+		],
+		"parietal_r": [
+			"Os pariétal droit"
+		],
+		"temporal_l": [
+			"Os temporal gauche"
+		],
+		"temporal_r": [
+			"Os temporal droit"
+		],
+		"occipital": [
+			"Os occipital"
+		],
+		"sphenoid": [
+			"Os sphénoïde"
+		],
+		"ethmoid": [
+			"Os ethmoïde"
+		],
+		"nasal_l": [
+			"Os nasal gauche"
+		],
+		"nasal_r": [
+			"Os nasal droit"
+		],
+		"lacrimal_l": [
+			"Os lacrymal gauche"
+		],
+		"lacrimal_r": [
+			"Os lacrymal droit"
+		],
+		"zygomatic_l": [
+			"Os zygomatique gauche (pommette)",
+			"Os zygomatique gauche"
+		],
+		"zygomatic_r": [
+			"Os zygomatique droit (pommette)",
+			"Os zygomatique droit"
+		],
+		"maxilla_l": [
+			"Maxillaire gauche (mâchoire supérieure)",
+			"Maxillaire gauche"
+		],
+		"maxilla_r": [
+			"Maxillaire droit (mâchoire supérieure)",
+			"Maxillaire droit"
+		],
+		"palatine_l": [
+			"Os palatin gauche"
+		],
+		"palatine_r": [
+			"Os palatin droit"
+		],
+		"inf_concha_l": [
+			"Cornet nasal inférieur gauche"
+		],
+		"inf_concha_r": [
+			"Cornet nasal inférieur droit"
+		],
+		"mandible": [
+			"Mandibule (mâchoire inférieure)",
+			"Mandibule"
+		],
+		"hyoid": [
+			"Os hyoïde"
+		],
+		"malleus_l": [
+			"Malléus gauche (marteau)",
+			"Malléus gauche"
+		],
+		"malleus_r": [
+			"Malléus droit (marteau)",
+			"Malléus droit"
+		],
+		"incus_l": [
+			"Incus gauche (enclume)",
+			"Incus gauche"
+		],
+		"incus_r": [
+			"Incus droit (enclume)",
+			"Incus droit"
+		],
+		"stapes_l": [
+			"Stapès gauche (étrier)",
+			"Stapès gauche"
+		],
+		"stapes_r": [
+			"Stapès droit (étrier)",
+			"Stapès droit"
+		],
+		"c3": [
+			"Vertèbre C3"
+		],
+		"c4": [
+			"Vertèbre C4"
+		],
+		"c5": [
+			"Vertèbre C5"
+		],
+		"c6": [
+			"Vertèbre C6"
+		],
+		"c7": [
+			"Vertèbre C7"
+		],
+		"t1": [
+			"Vertèbre T1"
+		],
+		"t2": [
+			"Vertèbre T2"
+		],
+		"t3": [
+			"Vertèbre T3"
+		],
+		"t4": [
+			"Vertèbre T4"
+		],
+		"t5": [
+			"Vertèbre T5"
+		],
+		"t6": [
+			"Vertèbre T6"
+		],
+		"t7": [
+			"Vertèbre T7"
+		],
+		"t8": [
+			"Vertèbre T8"
+		],
+		"t9": [
+			"Vertèbre T9"
+		],
+		"t10": [
+			"Vertèbre T10"
+		],
+		"t11": [
+			"Vertèbre T11"
+		],
+		"t12": [
+			"Vertèbre T12"
+		],
+		"l1": [
+			"Vertèbre L1"
+		],
+		"l2": [
+			"Vertèbre L2"
+		],
+		"l3": [
+			"Vertèbre L3"
+		],
+		"l4": [
+			"Vertèbre L4"
+		],
+		"l5": [
+			"Vertèbre L5"
+		],
+		"sternum": [
+			"Sternum"
+		],
+		"rib1_l": [
+			"1re côte gauche"
+		],
+		"rib1_r": [
+			"1re côte droite"
+		],
+		"rib2_l": [
+			"2e côte gauche"
+		],
+		"rib2_r": [
+			"2e côte droite"
+		],
+		"rib3_l": [
+			"3e côte gauche"
+		],
+		"rib3_r": [
+			"3e côte droite"
+		],
+		"rib4_l": [
+			"4e côte gauche"
+		],
+		"rib4_r": [
+			"4e côte droite"
+		],
+		"rib5_l": [
+			"5e côte gauche"
+		],
+		"rib5_r": [
+			"5e côte droite"
+		],
+		"rib6_l": [
+			"6e côte gauche"
+		],
+		"rib6_r": [
+			"6e côte droite"
+		],
+		"rib7_l": [
+			"7e côte gauche"
+		],
+		"rib7_r": [
+			"7e côte droite"
+		],
+		"rib8_l": [
+			"8e côte gauche"
+		],
+		"rib8_r": [
+			"8e côte droite"
+		],
+		"rib9_l": [
+			"9e côte gauche"
+		],
+		"rib9_r": [
+			"9e côte droite"
+		],
+		"rib10_l": [
+			"10e côte gauche"
+		],
+		"rib10_r": [
+			"10e côte droite"
+		],
+		"rib11_l": [
+			"11e côte gauche"
+		],
+		"rib11_r": [
+			"11e côte droite"
+		],
+		"rib12_l": [
+			"12e côte gauche"
+		],
+		"rib12_r": [
+			"12e côte droite"
+		],
+		"hip_l": [
+			"Os coxal gauche (os de la hanche)",
+			"Os coxal gauche"
+		],
+		"hip_r": [
+			"Os coxal droit (os de la hanche)",
+			"Os coxal droit"
+		],
+		"coccyx": [
+			"Coccyx"
+		],
+		"clavicle_l": [
+			"Clavicule gauche"
+		],
+		"clavicle_r": [
+			"Clavicule droite"
+		],
+		"scapula_l": [
+			"Scapula gauche (omoplate)",
+			"Scapula gauche"
+		],
+		"scapula_r": [
+			"Scapula droite (omoplate)",
+			"Scapula droite"
+		],
+		"humerus_l": [
+			"Humérus gauche"
+		],
+		"humerus_r": [
+			"Humérus droit"
+		],
+		"radius_l": [
+			"Radius gauche"
+		],
+		"radius_r": [
+			"Radius droit"
+		],
+		"ulna_l": [
+			"Ulna gauche (cubitus)",
+			"Ulna gauche"
+		],
+		"ulna_r": [
+			"Ulna droite (cubitus)",
+			"Ulna droite"
+		],
+		"scaphoid_l": [
+			"Os scaphoïde gauche"
+		],
+		"scaphoid_r": [
+			"Os scaphoïde droit"
+		],
+		"lunate_l": [
+			"Os lunatum gauche (semi-lunaire)",
+			"Os lunatum gauche"
+		],
+		"lunate_r": [
+			"Os lunatum droit (semi-lunaire)",
+			"Os lunatum droit"
+		],
+		"triquetrum_l": [
+			"Os triquetrum gauche (pyramidal)",
+			"Os triquetrum gauche"
+		],
+		"triquetrum_r": [
+			"Os triquetrum droit (pyramidal)",
+			"Os triquetrum droit"
+		],
+		"pisiform_l": [
+			"Os pisiforme gauche"
+		],
+		"pisiform_r": [
+			"Os pisiforme droit"
+		],
+		"hamate_l": [
+			"Os hamatum gauche (os crochu)",
+			"Os hamatum gauche"
+		],
+		"hamate_r": [
+			"Os hamatum droit (os crochu)",
+			"Os hamatum droit"
+		],
+		"capitate_l": [
+			"Os capitatum gauche (grand os)",
+			"Os capitatum gauche"
+		],
+		"capitate_r": [
+			"Os capitatum droit (grand os)",
+			"Os capitatum droit"
+		],
+		"trapezoid_l": [
+			"Os trapézoïde gauche"
+		],
+		"trapezoid_r": [
+			"Os trapézoïde droit"
+		],
+		"trapezium_l": [
+			"Os trapèze gauche"
+		],
+		"trapezium_r": [
+			"Os trapèze droit"
+		],
+		"mc1_l": [
+			"1er métacarpien gauche (pouce)",
+			"1er métacarpien gauche"
+		],
+		"mc1_r": [
+			"1er métacarpien droit (pouce)",
+			"1er métacarpien droit"
+		],
+		"mc2_l": [
+			"2e métacarpien gauche (index)",
+			"2e métacarpien gauche"
+		],
+		"mc2_r": [
+			"2e métacarpien droit (index)",
+			"2e métacarpien droit"
+		],
+		"mc3_l": [
+			"3e métacarpien gauche (majeur)",
+			"3e métacarpien gauche"
+		],
+		"mc3_r": [
+			"3e métacarpien droit (majeur)",
+			"3e métacarpien droit"
+		],
+		"mc4_l": [
+			"4e métacarpien gauche (annulaire)",
+			"4e métacarpien gauche"
+		],
+		"mc4_r": [
+			"4e métacarpien droit (annulaire)",
+			"4e métacarpien droit"
+		],
+		"mc5_l": [
+			"5e métacarpien gauche (auriculaire)",
+			"5e métacarpien gauche"
+		],
+		"mc5_r": [
+			"5e métacarpien droit (auriculaire)",
+			"5e métacarpien droit"
+		],
+		"pph1_hand_l": [
+			"Phalange proximale gauche — pouce",
+			"Phalange proximale gauche du 1er doigt"
+		],
+		"pph1_hand_r": [
+			"Phalange proximale droite — pouce",
+			"Phalange proximale droite du 1er doigt"
+		],
+		"pph2_hand_l": [
+			"Phalange proximale gauche — index",
+			"Phalange proximale gauche du 2e doigt"
+		],
+		"pph2_hand_r": [
+			"Phalange proximale droite — index",
+			"Phalange proximale droite du 2e doigt"
+		],
+		"pph3_hand_l": [
+			"Phalange proximale gauche — majeur",
+			"Phalange proximale gauche du 3e doigt"
+		],
+		"pph3_hand_r": [
+			"Phalange proximale droite — majeur",
+			"Phalange proximale droite du 3e doigt"
+		],
+		"pph4_hand_l": [
+			"Phalange proximale gauche — annulaire",
+			"Phalange proximale gauche du 4e doigt"
+		],
+		"pph4_hand_r": [
+			"Phalange proximale droite — annulaire",
+			"Phalange proximale droite du 4e doigt"
+		],
+		"pph5_hand_l": [
+			"Phalange proximale gauche — auriculaire",
+			"Phalange proximale gauche du 5e doigt"
+		],
+		"pph5_hand_r": [
+			"Phalange proximale droite — auriculaire",
+			"Phalange proximale droite du 5e doigt"
+		],
+		"mph2_hand_l": [
+			"Phalange moyenne gauche — index",
+			"Phalange moyenne gauche du 2e doigt"
+		],
+		"mph2_hand_r": [
+			"Phalange moyenne droite — index",
+			"Phalange moyenne droite du 2e doigt"
+		],
+		"mph3_hand_l": [
+			"Phalange moyenne gauche — majeur",
+			"Phalange moyenne gauche du 3e doigt"
+		],
+		"mph3_hand_r": [
+			"Phalange moyenne droite — majeur",
+			"Phalange moyenne droite du 3e doigt"
+		],
+		"mph4_hand_l": [
+			"Phalange moyenne gauche — annulaire",
+			"Phalange moyenne gauche du 4e doigt"
+		],
+		"mph4_hand_r": [
+			"Phalange moyenne droite — annulaire",
+			"Phalange moyenne droite du 4e doigt"
+		],
+		"mph5_hand_l": [
+			"Phalange moyenne gauche — auriculaire",
+			"Phalange moyenne gauche du 5e doigt"
+		],
+		"mph5_hand_r": [
+			"Phalange moyenne droite — auriculaire",
+			"Phalange moyenne droite du 5e doigt"
+		],
+		"dph1_hand_l": [
+			"Phalange distale gauche — pouce",
+			"Phalange distale gauche du 1er doigt"
+		],
+		"dph1_hand_r": [
+			"Phalange distale droite — pouce",
+			"Phalange distale droite du 1er doigt"
+		],
+		"dph2_hand_l": [
+			"Phalange distale gauche — index",
+			"Phalange distale gauche du 2e doigt"
+		],
+		"dph2_hand_r": [
+			"Phalange distale droite — index",
+			"Phalange distale droite du 2e doigt"
+		],
+		"dph3_hand_l": [
+			"Phalange distale gauche — majeur",
+			"Phalange distale gauche du 3e doigt"
+		],
+		"dph3_hand_r": [
+			"Phalange distale droite — majeur",
+			"Phalange distale droite du 3e doigt"
+		],
+		"dph4_hand_l": [
+			"Phalange distale gauche — annulaire",
+			"Phalange distale gauche du 4e doigt"
+		],
+		"dph4_hand_r": [
+			"Phalange distale droite — annulaire",
+			"Phalange distale droite du 4e doigt"
+		],
+		"dph5_hand_l": [
+			"Phalange distale gauche — auriculaire",
+			"Phalange distale gauche du 5e doigt"
+		],
+		"dph5_hand_r": [
+			"Phalange distale droite — auriculaire",
+			"Phalange distale droite du 5e doigt"
+		],
+		"femur_l": [
+			"Fémur gauche"
+		],
+		"femur_r": [
+			"Fémur droit"
+		],
+		"patella_l": [
+			"Patella gauche (rotule)",
+			"Patella gauche"
+		],
+		"patella_r": [
+			"Patella droite (rotule)",
+			"Patella droite"
+		],
+		"tibia_l": [
+			"Tibia gauche"
+		],
+		"tibia_r": [
+			"Tibia droit"
+		],
+		"fibula_l": [
+			"Fibula gauche (péroné)",
+			"Fibula gauche"
+		],
+		"fibula_r": [
+			"Fibula droite (péroné)",
+			"Fibula droite"
+		],
+		"talus_l": [
+			"Talus gauche (astragale)",
+			"Talus gauche"
+		],
+		"talus_r": [
+			"Talus droit (astragale)",
+			"Talus droit"
+		],
+		"calcaneus_l": [
+			"Calcanéus gauche (os du talon)",
+			"Calcanéus gauche"
+		],
+		"calcaneus_r": [
+			"Calcanéus droit (os du talon)",
+			"Calcanéus droit"
+		],
+		"navicular_l": [
+			"Os naviculaire gauche"
+		],
+		"navicular_r": [
+			"Os naviculaire droit"
+		],
+		"med_cuneiform_l": [
+			"Os cunéiforme médial gauche"
+		],
+		"med_cuneiform_r": [
+			"Os cunéiforme médial droit"
+		],
+		"int_cuneiform_l": [
+			"Os cunéiforme intermédiaire gauche"
+		],
+		"int_cuneiform_r": [
+			"Os cunéiforme intermédiaire droit"
+		],
+		"lat_cuneiform_l": [
+			"Os cunéiforme latéral gauche"
+		],
+		"lat_cuneiform_r": [
+			"Os cunéiforme latéral droit"
+		],
+		"cuboid_l": [
+			"Os cuboïde gauche"
+		],
+		"cuboid_r": [
+			"Os cuboïde droit"
+		],
+		"mt1_l": [
+			"1er métatarsien gauche (gros orteil)",
+			"1er métatarsien gauche"
+		],
+		"mt1_r": [
+			"1er métatarsien droit (gros orteil)",
+			"1er métatarsien droit"
+		],
+		"mt2_l": [
+			"2e métatarsien gauche (2e orteil)",
+			"2e métatarsien gauche"
+		],
+		"mt2_r": [
+			"2e métatarsien droit (2e orteil)",
+			"2e métatarsien droit"
+		],
+		"mt3_l": [
+			"3e métatarsien gauche (3e orteil)",
+			"3e métatarsien gauche"
+		],
+		"mt3_r": [
+			"3e métatarsien droit (3e orteil)",
+			"3e métatarsien droit"
+		],
+		"mt4_l": [
+			"4e métatarsien gauche (4e orteil)",
+			"4e métatarsien gauche"
+		],
+		"mt4_r": [
+			"4e métatarsien droit (4e orteil)",
+			"4e métatarsien droit"
+		],
+		"mt5_l": [
+			"5e métatarsien gauche (petit orteil)",
+			"5e métatarsien gauche"
+		],
+		"mt5_r": [
+			"5e métatarsien droit (petit orteil)",
+			"5e métatarsien droit"
+		],
+		"pph1_foot_l": [
+			"Phalange proximale gauche — gros orteil",
+			"Phalange proximale gauche du 1er orteil"
+		],
+		"pph1_foot_r": [
+			"Phalange proximale droite — gros orteil",
+			"Phalange proximale droite du 1er orteil"
+		],
+		"pph2_foot_l": [
+			"Phalange proximale gauche — 2e orteil",
+			"Phalange proximale gauche du 2e orteil"
+		],
+		"pph2_foot_r": [
+			"Phalange proximale droite — 2e orteil",
+			"Phalange proximale droite du 2e orteil"
+		],
+		"pph3_foot_l": [
+			"Phalange proximale gauche — 3e orteil",
+			"Phalange proximale gauche du 3e orteil"
+		],
+		"pph3_foot_r": [
+			"Phalange proximale droite — 3e orteil",
+			"Phalange proximale droite du 3e orteil"
+		],
+		"pph4_foot_l": [
+			"Phalange proximale gauche — 4e orteil",
+			"Phalange proximale gauche du 4e orteil"
+		],
+		"pph4_foot_r": [
+			"Phalange proximale droite — 4e orteil",
+			"Phalange proximale droite du 4e orteil"
+		],
+		"pph5_foot_l": [
+			"Phalange proximale gauche — petit orteil",
+			"Phalange proximale gauche du 5e orteil"
+		],
+		"pph5_foot_r": [
+			"Phalange proximale droite — petit orteil",
+			"Phalange proximale droite du 5e orteil"
+		],
+		"mph2_foot_l": [
+			"Phalange moyenne gauche — 2e orteil",
+			"Phalange moyenne gauche du 2e orteil"
+		],
+		"mph2_foot_r": [
+			"Phalange moyenne droite — 2e orteil",
+			"Phalange moyenne droite du 2e orteil"
+		],
+		"mph3_foot_l": [
+			"Phalange moyenne gauche — 3e orteil",
+			"Phalange moyenne gauche du 3e orteil"
+		],
+		"mph3_foot_r": [
+			"Phalange moyenne droite — 3e orteil",
+			"Phalange moyenne droite du 3e orteil"
+		],
+		"mph4_foot_l": [
+			"Phalange moyenne gauche — 4e orteil",
+			"Phalange moyenne gauche du 4e orteil"
+		],
+		"mph4_foot_r": [
+			"Phalange moyenne droite — 4e orteil",
+			"Phalange moyenne droite du 4e orteil"
+		],
+		"mph5_foot_l": [
+			"Phalange moyenne gauche — petit orteil",
+			"Phalange moyenne gauche du 5e orteil"
+		],
+		"mph5_foot_r": [
+			"Phalange moyenne droite — petit orteil",
+			"Phalange moyenne droite du 5e orteil"
+		],
+		"dph1_foot_l": [
+			"Phalange distale gauche — gros orteil",
+			"Phalange distale gauche du 1er orteil"
+		],
+		"dph1_foot_r": [
+			"Phalange distale droite — gros orteil",
+			"Phalange distale droite du 1er orteil"
+		],
+		"dph2_foot_l": [
+			"Phalange distale gauche — 2e orteil",
+			"Phalange distale gauche du 2e orteil"
+		],
+		"dph2_foot_r": [
+			"Phalange distale droite — 2e orteil",
+			"Phalange distale droite du 2e orteil"
+		],
+		"dph3_foot_l": [
+			"Phalange distale gauche — 3e orteil",
+			"Phalange distale gauche du 3e orteil"
+		],
+		"dph3_foot_r": [
+			"Phalange distale droite — 3e orteil",
+			"Phalange distale droite du 3e orteil"
+		],
+		"dph4_foot_l": [
+			"Phalange distale gauche — 4e orteil",
+			"Phalange distale gauche du 4e orteil"
+		],
+		"dph4_foot_r": [
+			"Phalange distale droite — 4e orteil",
+			"Phalange distale droite du 4e orteil"
+		],
+		"dph5_foot_l": [
+			"Phalange distale gauche — petit orteil",
+			"Phalange distale gauche du 5e orteil"
+		],
+		"dph5_foot_r": [
+			"Phalange distale droite — petit orteil",
+			"Phalange distale droite du 5e orteil"
+		]
+	},
+	"groups": {
+		"frontal": [
+			"Os frontal"
+		],
+		"parietal": [
+			"Os pariétal"
+		],
+		"temporal": [
+			"Os temporal"
+		],
+		"occipital": [
+			"Os occipital"
+		],
+		"sphenoid": [
+			"Os sphénoïde"
+		],
+		"ethmoid": [
+			"Os ethmoïde"
+		],
+		"nasal": [
+			"Os nasal"
+		],
+		"lacrimal": [
+			"Os lacrymal"
+		],
+		"zygomatic": [
+			"Os zygomatique (pommette)",
+			"Os zygomatique"
+		],
+		"maxilla": [
+			"Maxillaire (mâchoire supérieure)",
+			"Maxillaire"
+		],
+		"palatine": [
+			"Os palatin"
+		],
+		"inf_concha": [
+			"Cornet nasal inférieur"
+		],
+		"mandible": [
+			"Mandibule (mâchoire inférieure)",
+			"Mandibule"
+		],
+		"hyoid": [
+			"Os hyoïde"
+		],
+		"malleus": [
+			"Malléus (marteau)",
+			"Malléus"
+		],
+		"incus": [
+			"Incus (enclume)",
+			"Incus"
+		],
+		"stapes": [
+			"Stapès (étrier)",
+			"Stapès"
+		],
+		"cervical": [
+			"Vertèbre cervicale (C3–C7)"
+		],
+		"thoracic": [
+			"Vertèbre thoracique (T1–T12)"
+		],
+		"lumbar": [
+			"Vertèbre lombaire (L1–L5)"
+		],
+		"sternum": [
+			"Sternum"
+		],
+		"rib": [
+			"Côte"
+		],
+		"hip": [
+			"Os coxal (os de la hanche)",
+			"Os coxal"
+		],
+		"coccyx": [
+			"Coccyx"
+		],
+		"clavicle": [
+			"Clavicule"
+		],
+		"scapula": [
+			"Scapula (omoplate)",
+			"Scapula"
+		],
+		"humerus": [
+			"Humérus"
+		],
+		"ulna": [
+			"Ulna (cubitus)",
+			"Ulna"
+		],
+		"scaphoid": [
+			"Os scaphoïde"
+		],
+		"lunate": [
+			"Os lunatum (semi-lunaire)",
+			"Os lunatum"
+		],
+		"triquetrum": [
+			"Os triquetrum (pyramidal)",
+			"Os triquetrum"
+		],
+		"pisiform": [
+			"Os pisiforme"
+		],
+		"hamate": [
+			"Os hamatum (os crochu)",
+			"Os hamatum"
+		],
+		"capitate": [
+			"Os capitatum (grand os)",
+			"Os capitatum"
+		],
+		"trapezoid": [
+			"Os trapézoïde"
+		],
+		"trapezium": [
+			"Os trapèze"
+		],
+		"metacarpal": [
+			"Métacarpien"
+		],
+		"proximal_ph_hand": [
+			"Phalange proximale (main)"
+		],
+		"middle_ph_hand": [
+			"Phalange moyenne (main)"
+		],
+		"distal_ph_hand": [
+			"Phalange distale (main)"
+		],
+		"femur": [
+			"Fémur"
+		],
+		"patella": [
+			"Patella (rotule)",
+			"Patella"
+		],
+		"tibia": [
+			"Tibia"
+		],
+		"fibula": [
+			"Fibula (péroné)",
+			"Fibula"
+		],
+		"talus": [
+			"Talus (astragale)",
+			"Talus"
+		],
+		"calcaneus": [
+			"Calcanéus (os du talon)",
+			"Calcanéus"
+		],
+		"navicular": [
+			"Os naviculaire"
+		],
+		"med_cuneiform": [
+			"Os cunéiforme médial"
+		],
+		"int_cuneiform": [
+			"Os cunéiforme intermédiaire"
+		],
+		"lat_cuneiform": [
+			"Os cunéiforme latéral"
+		],
+		"cuboid": [
+			"Os cuboïde"
+		],
+		"metatarsal": [
+			"Métatarsien"
+		],
+		"proximal_ph_foot": [
+			"Phalange proximale (pied)"
+		],
+		"middle_ph_foot": [
+			"Phalange moyenne (pied)"
+		],
+		"distal_ph_foot": [
+			"Phalange distale (pied)"
+		]
+	},
+	"regions": {
+		"head": "Tête",
+		"torso": "Tronc",
+		"arm": "Bras",
+		"hand": "Main",
+		"leg": "Jambe",
+		"foot": "Pied"
+	},
+	"subs": {
+		"cranium": "Crâne",
+		"face": "Face et mâchoire",
+		"ear": "Oreille",
+		"spine": "Colonne vertébrale",
+		"ribcage": "Cage thoracique",
+		"pelvis": "Bassin",
+		"shoulder": "Épaule",
+		"armbones": "Bras et avant-bras",
+		"carpals": "Carpe (poignet)",
+		"metacarpals": "Métacarpe (paume)",
+		"fingers": "Doigts",
+		"thigh": "Cuisse et genou",
+		"lowerleg": "Bas de la jambe",
+		"tarsals": "Tarse (cheville)",
+		"metatarsals": "Métatarse",
+		"toes": "Orteils"
+	},
+	"tips": {
+		"all": "206 os dans un squelette adulte typique.",
+		"head": "29 os : 22 dans le crâne, 6 dans les oreilles, plus l’os hyoïde.",
+		"cranium": "Le crâne compte 8 os : frontal, occipital, sphénoïde, ethmoïde, plus deux pariétaux et deux temporaux.",
+		"face": "14 os dans la face : nasaux, lacrymaux, zygomatiques, maxillaires, palatins et cornets nasaux inférieurs (par paires), plus le vomer et la mandibule. L’os hyoïde se trouve sous la mâchoire et ne touche aucun autre os.",
+		"ear": "Le malléus, l’incus et le stapès (marteau, enclume, étrier) transmettent le son du tympan vers l’oreille interne. Le stapès est le plus petit os du corps.",
+		"torso": "53 os : 24 vertèbres, 24 côtes, le sternum et le bassin (2 os coxaux, sacrum, coccyx).",
+		"spine": "Petit-déjeuner à 7 h, déjeuner à 12 h, dîner à 5 h : 7 vertèbres cervicales, 12 thoraciques, 5 lombaires. C1 (atlas) porte la tête ; C2 (axis) lui permet de tourner.",
+		"ribcage": "Les côtes 1 à 7 sont les vraies côtes (reliées directement au sternum), les côtes 8 à 10 les fausses côtes (reliées par du cartilage), les côtes 11 et 12 les côtes flottantes.",
+		"pelvis": "Chaque os coxal est formé de trois os soudés : l’ilium, l’ischium et le pubis. Le sacrum est formé de 5 vertèbres soudées ; le coccyx, généralement de 4.",
+		"arm": "10 os : clavicule, scapula, humérus, radius et ulna de chaque côté.",
+		"shoulder": "La clavicule et la scapula forment la ceinture scapulaire. La clavicule est le seul lien osseux entre le bras et le tronc.",
+		"armbones": "Le radius est du côté du pouce. L’ulna forme la pointe du coude.",
+		"hand": "27 os dans chaque main : 8 os du carpe, 5 métacarpiens, 14 phalanges.",
+		"carpals": "Rangée proximale (près de l’avant-bras), du pouce vers l’auriculaire : scaphoïde, lunatum, triquetrum, pisiforme. Rangée distale (près des doigts), de l’auriculaire vers le pouce : hamatum, capitatum, trapézoïde, trapèze.",
+		"metacarpals": "Les métacarpiens sont numérotés de 1 à 5, en partant du pouce.",
+		"fingers": "Chaque doigt a une phalange proximale, une moyenne et une distale. Le pouce n’a pas de phalange moyenne : chaque main en compte donc 14.",
+		"leg": "8 os : fémur, patella, tibia et fibula de chaque côté.",
+		"thigh": "Le fémur est l’os le plus long et le plus solide du corps. La patella (rotule) est le plus grand os sésamoïde, un os qui se forme dans un tendon.",
+		"lowerleg": "Le tibia porte le poids du corps. La fibula est l’os fin sur le côté externe de la jambe.",
+		"foot": "26 os dans chaque pied : 7 os du tarse, 5 métatarsiens, 14 phalanges.",
+		"tarsals": "7 os : talus, calcanéus, os naviculaire, os cuboïde et trois os cunéiformes (médial, intermédiaire, latéral).",
+		"metatarsals": "Les métatarsiens sont numérotés de 1 à 5, en partant du gros orteil.",
+		"toes": "Comme les doigts : phalanges proximale, moyenne et distale, sans phalange moyenne au gros orteil. 14 par pied."
+	}
+}

@@ -111,6 +111,44 @@ body {
 .prompt.is-ok { border-color: var(--ok); }
 .prompt.is-bad { border-color: var(--bad); }
 .prompt.is-reveal .eyebrow { color: var(--bad); }
+/* The presentation (hidden: S in Study; the engine's "presentation"): the model alone, turning, and with L a name on
+   every piece. The names are drawn by the engine at each piece's place on the screen. */
+body.present .prompt { display: none; }
+.labels { position: fixed; inset: 0; z-index: 4; overflow: hidden; pointer-events: none; font: 600 10px/1.2 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.labels svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.labels span, .labels polyline, .labels circle { opacity: 0; transition: opacity .3s, color .2s, stroke-opacity .2s; }
+.labels .in { opacity: 1; }
+.labels polyline { fill: none; stroke: var(--scan); stroke-opacity: .32; stroke-width: 1; }
+.labels circle { fill: var(--bg, #0a0f14); stroke: var(--scan); stroke-opacity: .7; stroke-width: 1; }
+.labels span { position: absolute; transform: translate(0, -50%); padding: 2px 0 2px 8px; white-space: nowrap; border-left: 2px solid var(--scan); text-shadow: 0 0 5px #000, 0 0 2px #000; }
+.labels span.left { transform: translate(-100%, -50%); padding: 2px 8px 2px 0; border-left: 0; border-right: 2px solid var(--scan); }
+/* (the one the display is "reading": brighter, with its trace) */
+.labels span.lit { color: #fff; text-shadow: 0 0 9px var(--scan), 0 0 2px #000; }
+.labels polyline.lit { stroke-opacity: 1; }
+.labels circle.lit { stroke-opacity: 1; fill: var(--scan); }
+
+/* Name it (an atlas with settings.nameIt): the answer is typed in the name's place. Once a hint has said how long the
+   name is, each letter has its own place behind the box (.slots), so the type is monospaced and the line is as many
+   characters wide as the name (--n). */
+.answer { display: flex; justify-content: center; align-items: center; margin: 0; min-width: 0; padding: 3px 0 5px; }
+/* (larger than a name in the other questions: the card grows into the room Study's notes take under it. Its own
+   typeface, JetBrains Mono, the main site's: an atlas page with the answer box loads it) */
+.answer-line { position: relative; flex: none; width: max(20ch, calc(var(--n, 0) * 1ch)); height: 1.35em; font-family: "JetBrains Mono", var(--f-mono); font-weight: 700; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.35; transform-origin: center; }
+.answer-line.has-slots { width: calc(var(--n) * 1ch); }
+/* The empty box is blank but for the cursor: no line under it (it read as a second progress bar) and no words in it.
+   Where the box hasn't the cursor yet (a phone, until it is tapped), a cursor is drawn in its place, to say where to type. */
+.answer-line.is-empty:not(:focus-within)::after { content: ""; position: absolute; left: 50%; top: 14%; width: 2px; height: 72%; background: var(--scan); animation: answer-caret 1.1s steps(1) infinite; pointer-events: none; }   /* (a tap on it reaches the box) */
+@keyframes answer-caret { 50% { opacity: 0; } }
+#answerBox { display: block; width: 100%; height: 100%; box-sizing: border-box; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; outline: none; font: inherit; color: var(--bone); text-align: center; caret-color: var(--scan); }
+.has-slots #answerBox { text-align: left; }
+.slots { position: absolute; inset: 0; display: flex; pointer-events: none; color: var(--muted); white-space: pre; }
+.slots i { flex: none; width: 1ch; font-style: normal; text-align: center; }
+.slots i.blank { background: linear-gradient(var(--line-strong), var(--line-strong)) center bottom / calc(100% - 4px) 3px no-repeat; }
+.answer-line.has-slots:focus-within .slots i.blank { background-image: linear-gradient(var(--muted), var(--muted)); }
+.btn.answer-help { position: absolute; top: 9px; right: 11px; padding: 5px 14px; font-size: 13px; border-radius: 999px; color: var(--fg); background: transparent; }
+.prompt.has-note .pmeta { color: var(--bad); }   /* what was typed, after a wrong answer */
+.prompt.is-right .eyebrow, .prompt.is-right #answerBox { color: var(--ok); }
+.prompt.is-wrong .eyebrow, .prompt.is-wrong #answerBox { color: var(--bad); }
 .review { display: grid; gap: 8px; justify-items: center; margin-top: 4px; }
 .legend { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; font-size: 13.5px; }
 .legend .key { display: inline-flex; align-items: center; gap: 7px; }
@@ -203,16 +241,7 @@ body.clean .ractions, body.clean .rhint { display: none; }
 .results-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 2px; max-height: 190px; overflow-y: auto; }
 .results-list button { width: 100%; text-align: left; font: inherit; font-size: 12.5px; color: var(--fg); background: transparent; border: 0; border-radius: 6px; padding: 6px 8px; cursor: pointer; }
 .results-list button:hover { background: var(--bg-lift); }
-/* language picker: a native select (keyboard and screen-reader friendly), styled like the search box */
-.lang-pick { position: relative; display: block; }
-.lang-pick svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--scan); pointer-events: none; }
-.lang-pick::after { content: ""; position: absolute; right: 12px; top: 50%; width: 6px; height: 6px; margin-top: -5px; border: solid var(--muted); border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); pointer-events: none; }
-#langSel {
-  width: 100%; appearance: none; -webkit-appearance: none; font: inherit; font-size: 13px; font-weight: 600; color: var(--fg);
-  background: var(--bg); border: 1px solid var(--line-strong); border-radius: 7px; padding: 8px 30px 8px 33px; cursor: pointer;
-}
-#langSel:hover, #langSel:focus { border-color: var(--scan); outline: none; }
-#langSel option { background: var(--bg-lift); color: var(--fg); }
+/* the language picker's look is /js/language.js's (the same in every tool), in the colours above */
 
 /* ---------- bottom dock ---------- */
 .dock { grid-column: 2; grid-row: 3; justify-self: center; align-self: end; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
@@ -251,7 +280,8 @@ body.clean .ractions, body.clean .rhint { display: none; }
 .vc-sec h4 { margin: 0 0 0 4px; font-size: 11.5px; font-weight: 600; color: var(--muted); }
 .viewcard .seg button { padding: 5px 6px; font-size: 12.5px; }
 .zp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-:where([data-atlas="engine"], [data-atlas="landmarks"]) .zp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* a zoom chip whose name is too long for its column (a long language, an engine part) is cut with "…" rather than widening the panel */
+:where([data-atlas="engine"], [data-atlas="landmarks"], [data-atlas="tooth"]) .zp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .zchip {
   font: inherit; font-size: 12.5px; color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 7px;
   padding: 4px 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 6px; text-align: left; white-space: nowrap;
@@ -343,6 +373,9 @@ body.clean #cleanExit { display: inline-block; opacity: .55; }
   .brand .mark { font-size: 15px; }
   .prompt { grid-column: 1; grid-row: 2; align-self: stretch; padding: 10px 14px; }
   .pname { font-size: clamp(19px, 5.6vw, 26px); }
+  .answer-line { font-size: 21px; }   /* (16px or more: a phone zooms the page in on a box with smaller text) */
+  .slots i.blank { background-size: calc(100% - 3px) 2px; }
+  .btn.answer-help { top: 7px; right: 9px; padding: 4px 12px; font-size: 12px; }
   .ptip { font-size: 12px; }
   .stats { grid-column: 1; grid-row: 3; justify-self: center; }
   .stat { padding: 4px 9px; min-width: 56px; }

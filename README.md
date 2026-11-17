@@ -1,53 +1,56 @@
-# Bone Atlas
+# Anatomy Atlas
 
-Learn every bone in the human body on an interactive 3D skeleton.
+Ten interactive 3D atlases for learning human anatomy: bones and their landmarks, muscles, ligaments, nerves, the heart and blood vessels, the lymphatic system, the organs, the brain and the teeth. Each one has a Study mode, a Practice mode that brings your misses back, and a timed Test, all in the browser, with no account.
 
-**Use it here: [samplesize1.com/tools/bone-atlas](https://samplesize1.com/tools/bone-atlas/)**
+Made by [@samplesize_1](https://www.instagram.com/samplesize_1/). **Use them at [samplesize1.com/tools/anatomy](https://samplesize1.com/tools/anatomy/).**
 
-Made by [@samplesize_1](https://www.instagram.com/samplesize_1/) to learn all 206 bones for an n=1 experiment.
+| Atlas | What you learn | Use it | Code |
+| --- | --- | --- | --- |
+| Bone Atlas | Every bone in the human body | [Open](https://samplesize1.com/tools/bone-atlas/) | [`bone-atlas/`](bone-atlas/) |
+| Bone Landmarks | The landmarks on each bone, from trochanters to foramina | [Open](https://samplesize1.com/tools/bone-landmarks/) | [`bone-landmarks/`](bone-landmarks/) |
+| Muscle Atlas | The muscles of the human body, layer by layer | [Open](https://samplesize1.com/tools/muscle-atlas/) | [`muscle-atlas/`](muscle-atlas/) |
+| Joint Atlas | The ligaments that hold the joints together | [Open](https://samplesize1.com/tools/joint-atlas/) | [`joint-atlas/`](joint-atlas/) |
+| Nerve Atlas | The nerves of the human body | [Open](https://samplesize1.com/tools/nerve-atlas/) | [`nerve-atlas/`](nerve-atlas/) |
+| Heart Atlas | The parts of the heart and the body's main blood vessels | [Open](https://samplesize1.com/tools/heart-atlas/) | [`heart-atlas/`](heart-atlas/) |
+| Lymph Atlas | The lymph nodes and lymphatic organs | [Open](https://samplesize1.com/tools/lymph-atlas/) | [`lymph-atlas/`](lymph-atlas/) |
+| Organ Atlas | The organs, system by system | [Open](https://samplesize1.com/tools/organ-atlas/) | [`organ-atlas/`](organ-atlas/) |
+| Brain Atlas | The parts of the human brain | [Open](https://samplesize1.com/tools/brain-atlas/) | [`brain-atlas/`](brain-atlas/) |
+| Tooth Atlas | The adult teeth, by name and number | [Open](https://samplesize1.com/tools/tooth-atlas/) | [`tooth-atlas/`](tooth-atlas/) |
 
-## What it does
+Each atlas's folder has its own README: what it covers, its files and where its 3D model comes from.
 
-- All 206 bones of the adult skeleton on a 3D model you can rotate and zoom
-- Two levels: the 60 bone names (bones of the same kind share one name), or all 206 bones one by one
-- The whole body or one region at a time: head, torso, arm, hand, leg or foot
-- **Study**: step through the bones with the arrows, or click any bone to see its name
-- **Practice**: find each bone; misses come back a few questions later until you get them right
-- **Test**: every bone once, timed, no help, with your best score saved
-- Hints on or off: everyday names like "Patella (kneecap)", or technical names only
-- X-ray and peel modes to reach bones hidden inside others
-- Voice commands to zoom ("left foot", "spine", "whole body") in Chrome, Edge and Safari
-- English, French, Spanish, Portuguese (Brazil) and German, plus Latin: the official Latin bone names (Terminologia Anatomica) with the interface in English
-- Progress and best scores stay in your browser: no account, nothing is sent anywhere
+## Run them yourself
 
-## Run it yourself
-
-It's a plain web page with no build step. Browsers won't load the 3D model from a page opened straight from disk, so serve the folder with any static file server:
+They're plain web pages with no build step. Browsers won't load the 3D models from a page opened straight from disk, so serve the whole repository with any static file server:
 
 ```sh
-git clone https://github.com/SampleSize1/Bone-Atlas.git
-cd Bone-Atlas
+git clone https://github.com/SampleSize1/Anatomy-Atlas.git
+cd Anatomy-Atlas
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open an atlas's folder, such as http://localhost:8000/bone-atlas/. Serve the repository itself, not one atlas's folder: every atlas loads the shared files from the folder above it.
 
-| File | What it is |
+## How it's put together
+
+Every atlas runs on one engine. An atlas's folder holds only what makes it that atlas: its page and settings (`index.html`), everything it teaches (`data.js`), its 3D model (`.glb`) and, where it has them, its other languages (`lang/`). A change to the engine changes all ten.
+
+| Shared file | What it is |
 | --- | --- |
-| `index.html` | The page, and the settings that make it this atlas (zoom areas, colours, voice words) |
-| `data.js` | Everything the atlas teaches: regions, names, notes, translations |
-| `skeleton.glb` | The 3D skeleton |
-| `atlas-engine/atlas.js` | The atlas engine: the code, shared by the 3D atlases on [samplesize1.com](https://samplesize1.com/tools/) |
-| `atlas-engine/atlas.css` | The styles, shared by all the 3D atlases on [samplesize1.com](https://samplesize1.com/tools/) |
+| `atlas-engine/atlas.js` | The atlas engine: the 3D view, Study, Practice and Test, zooming, X-ray, voice commands |
+| `atlas-engine/answers.js` | Typed answers for "Name it" questions: which spellings count, and the hints |
+| `atlas-engine/atlas.css` | The styles |
+| `atlas-engine/text.js` | The words every atlas shares, in English; `atlas-engine/lang/<code>.json` has them in other languages |
 | `atlas-engine/three-bundle.js` | [three.js](https://threejs.org/) r169, bundled into one file |
-| `progress.js` | Saves progress in the browser (localStorage) |
+| `js/progress.js` | Saves progress and best scores in the browser (localStorage) |
+| `js/language.js` | Languages: picks one (a `?lang=` link, the one picked before, the browser's), the menu, and the text in it |
 
 ## Licences and credits
 
 - **Code**: MIT, see [LICENSE](LICENSE).
-- **3D model** (`skeleton.glb`): from [Z-Anatomy](https://github.com/Z-Anatomy/The-blend), based on [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html) © The Database Center for Life Science, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). If you reuse or change the model, keep this credit and share it under the same licence.
+- **3D models**: from [Z-Anatomy](https://github.com/Z-Anatomy/The-blend), based on [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html) © The Database Center for Life Science, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The Organ Atlas also uses pieces straight from BodyParts3D ([CC BY-SA 2.1 JP](https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en)) and from the [HuBMAP Human Reference Atlas](https://humanatlas.io/3d-reference-library) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Each atlas's README gives the full credit for its model and what was changed. If you reuse or change a model, keep its credit and share it under the same licence.
 - **three.js**: MIT, see [licenses/three.js.txt](licenses/three.js.txt).
 
 ## Updates and feedback
 
-This repository is copied automatically from [samplesize1.com](https://samplesize1.com/tools/) whenever the tool changes, so edits made directly here would be overwritten. Found a bug or have an idea? [Open an issue](https://github.com/SampleSize1/Bone-Atlas/issues).
+This repository is copied automatically from [samplesize1.com](https://samplesize1.com/tools/) whenever an atlas changes, so edits made directly here would be overwritten. Found a wrong label, a bug, or have an idea? [Open an issue](https://github.com/SampleSize1/Anatomy-Atlas/issues) and say which atlas it's about.

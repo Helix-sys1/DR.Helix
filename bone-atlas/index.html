@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0f14">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://samplesize1.com/tools/bone-atlas/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bone Atlas">
@@ -15,14 +15,16 @@
 <meta name="description" content="Learn every bone in the human body on a 3D skeleton. Study, practice and timed tests by region, for all 206 bones. Free, by SampleSize_1.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="./atlas-engine/atlas.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="../atlas-engine/atlas.css">
+<!-- Languages for the tools on this site (picking one, the menu, saving the choice) -->
+<script src="../js/language.js"></script>
 <style>
-/* What the Bone Atlas sets differently from the other atlases (the rest is ./atlas-engine/atlas.css) */
+/* What the Bone Atlas sets differently from the other atlases (the rest is ../atlas-engine/atlas.css) */
 :root { --tip-width: 62ch; --tip-height: auto; }   /* the line under the name is short here: no room is kept for it */
 </style>
-<link rel="modulepreload" href="./atlas-engine/atlas.js">
-<link rel="modulepreload" href="./atlas-engine/three-bundle.js">
+<link rel="modulepreload" href="../atlas-engine/atlas.js">
+<link rel="modulepreload" href="../atlas-engine/three-bundle.js">
 <link rel="modulepreload" href="data.js">
 
 <!-- Visible text is English here and is replaced with the chosen language at start-up. data-i18n="key" sets the text,
@@ -49,6 +51,14 @@
   <div class="prompt" id="prompt" aria-live="polite">
     <div class="eyebrow" id="pEyebrow" data-i18n="loading_eyebrow">Loading</div>
     <div class="pname" id="pName" data-i18n="loading_name">Skeleton</div>
+    <!-- Name it questions: the answer is typed here, in the name's place -->
+    <form class="answer" id="answer" hidden>
+      <div class="answer-line" id="answerLine">
+        <div class="slots" id="answerSlots" aria-hidden="true"></div>
+        <input id="answerBox" type="text" aria-label="Your answer" data-i18n-aria="answer_aria" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+      </div>
+      <button class="btn answer-help" id="answerHelp" type="button" data-i18n="clue">Clue</button>
+    </form>
     <div class="pmeta" id="pMeta">&nbsp;</div>
     <div class="ptip" id="pTip" hidden></div>
     <div class="pbar" id="pBarWrap"><i id="pBar"></i></div>
@@ -124,7 +134,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>
         <select id="langSel"></select>
       </span>
-      <p class="hint" id="langNote" style="margin-top:7px" data-i18n="lang_note" hidden></p>
+      <p class="hint" id="langNote" style="margin-top:7px" hidden></p>
     </section>
     <section>
       <h3 data-i18n="mode">Mode</h3>
@@ -134,6 +144,13 @@
         <button type="button" data-v="test" data-i18n="mode_test">Test</button>
       </div>
       <p class="hint" id="modeHint" style="margin-top:7px"></p>
+    </section>
+    <section id="quizBox" hidden>
+      <h3 data-i18n="quiz">Questions</h3>
+      <div class="seg" id="quizSeg">
+        <button type="button" data-v="find" data-i18n="quiz_find">Find it</button>
+        <button type="button" data-v="name" data-i18n="quiz_name">Name it</button>
+      </div>
     </section>
     <section>
       <h3 data-i18n="bones">Bones</h3>
@@ -150,6 +167,12 @@
       </div>
       <p class="hint" style="margin-top:7px" id="hintHint"></p>
     </section>
+    <section id="notesBox">
+      <div class="seg" id="notesSeg">
+        <button type="button" data-v="on" data-i18n="notes_on">Notes on</button>
+        <button type="button" data-v="off" data-i18n="notes_off">Notes off</button>
+      </div>
+    </section>
     <section id="searchBox" hidden>
       <h3 data-i18n="find_bone">Find a bone</h3>
       <input id="search" type="search" placeholder="e.g. hamate, 7th rib, T4" data-i18n-ph="search_ph" autocomplete="off">
@@ -163,10 +186,10 @@
       </div>
       <p class="hint" id="keysHint" style="margin-top:8px"></p>
     </section>
-    <p class="credit" id="credit">
-      3D model: <a href="https://github.com/Z-Anatomy/The-blend" target="_blank" rel="noopener">Z-Anatomy</a>, based on
-      <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html" target="_blank" rel="noopener">BodyParts3D</a> © The Database Center for Life Science,
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Made by @samplesize_1.
+    <p class="credit" id="credit" data-i18n-html="credit">
+      3D model: <a data-i18n-link="za" href="https://github.com/Z-Anatomy/The-blend" target="_blank" rel="noopener">Z-Anatomy</a>, based on
+      <a data-i18n-link="bp" href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html" target="_blank" rel="noopener">BodyParts3D</a> © The Database Center for Life Science,
+      <a data-i18n-link="cc" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Made by @samplesize_1.
     </p>
   </aside>
 
@@ -196,13 +219,13 @@
 <div class="overlay" id="loading">
   <div class="card">
     <h2>Bone Atlas</h2>
-    <p id="loadMsg">Loading the 3D skeleton…</p>
+    <p id="loadMsg" data-i18n-boot="loading">Loading the 3D skeleton…</p>
     <progress id="loadBar" max="1" value="0"></progress>
   </div>
 </div>
 
 <!-- Saved progress (scores, settings) for the tools on this site: stays in this browser -->
-<script src="progress.js"></script>
+<script src="../js/progress.js"></script>
 
 <script type="importmap">
 { "imports": {
@@ -212,35 +235,23 @@
 </script>
 
 <script>
-/* Language: a ?lang= link wins, then the visitor's own pick (saved in this browser), then the browser's
-   preferred languages, then English. Picked here, before the app runs, so even the loading card is translated. */
-(function () {
-  var LANGS = ['en', 'fr', 'es', 'pt', 'de', 'la'], pick = null;
-  function ok(v) { v = String(v || '').slice(0, 2).toLowerCase(); return LANGS.indexOf(v) >= 0 ? v : null; }
-  try { pick = ok(new URLSearchParams(location.search).get('lang')); } catch (e) { /* no query string */ }
-  // the saved choice: on samplesize1.com it is stored by /js/progress.js as 'ss1.bone-atlas.lang'; elsewhere as 'the206.lang'
-  ['ss1.bone-atlas.lang', 'the206.lang'].forEach(function (k) {
-    if (!pick) { try { pick = ok(JSON.parse(localStorage.getItem(k))); } catch (e) { /* storage unavailable */ } }
-  });
-  if (!pick) {
-    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
-    for (var i = 0; i < prefs.length && !pick; i++) pick = ok(prefs[i]);
-  }
-  window.__atlasLang = pick || 'en';
-  var BOOT = {"en":{"loading":"Loading the 3D skeleton…","start_fail":"Bone Atlas couldn’t start ({err}). Try reloading. If it keeps happening in this browser only, an extension or privacy setting is probably blocking part of the page.","engine_fail":"The 3D engine didn’t load. A content blocker, DNS filter or strict privacy setting may be blocking this page’s scripts.","webgl_fail":"This browser has 3D graphics (WebGL) switched off or unavailable, so the skeleton can’t be drawn. In Firefox, check that webgl.disabled is false in about:config and that hardware acceleration is on.","model_fail":"The skeleton model didn’t load. Check your connection and reload the page.","unknown":"unknown error"},"fr":{"loading":"Chargement du squelette 3D…","start_fail":"Bone Atlas n’a pas pu démarrer ({err}). Rechargez la page. Si cela ne se produit que dans ce navigateur, une extension ou un paramètre de confidentialité bloque probablement une partie de la page.","engine_fail":"Le moteur 3D ne s’est pas chargé. Un bloqueur de contenu, un filtre DNS ou un paramètre de confidentialité strict bloque peut-être les scripts de cette page.","webgl_fail":"Les graphismes 3D (WebGL) sont désactivés ou indisponibles dans ce navigateur : le squelette ne peut donc pas s’afficher. Dans Firefox, vérifiez que webgl.disabled vaut false dans about:config et que l’accélération matérielle est activée.","model_fail":"Le modèle du squelette ne s’est pas chargé. Vérifiez votre connexion et rechargez la page.","unknown":"erreur inconnue"},"es":{"loading":"Cargando el esqueleto 3D…","start_fail":"Bone Atlas no pudo iniciarse ({err}). Prueba a recargar. Si solo ocurre en este navegador, probablemente una extensión o un ajuste de privacidad esté bloqueando parte de la página.","engine_fail":"El motor 3D no se cargó. Puede que un bloqueador de contenido, un filtro DNS o un ajuste de privacidad estricto esté bloqueando los scripts de esta página.","webgl_fail":"Este navegador tiene los gráficos 3D (WebGL) desactivados o no disponibles, así que no se puede dibujar el esqueleto. En Firefox, comprueba que webgl.disabled sea false en about:config y que la aceleración por hardware esté activada.","model_fail":"El modelo del esqueleto no se cargó. Comprueba tu conexión y recarga la página.","unknown":"error desconocido"},"pt":{"loading":"Carregando o esqueleto 3D…","start_fail":"O Bone Atlas não conseguiu iniciar ({err}). Tente recarregar. Se isso só acontece neste navegador, provavelmente uma extensão ou configuração de privacidade está bloqueando parte da página.","engine_fail":"O motor 3D não carregou. Um bloqueador de conteúdo, filtro de DNS ou configuração de privacidade rígida pode estar bloqueando os scripts desta página.","webgl_fail":"Este navegador está com os gráficos 3D (WebGL) desativados ou indisponíveis, então o esqueleto não pode ser desenhado. No Firefox, verifique se webgl.disabled está como false em about:config e se a aceleração de hardware está ativada.","model_fail":"O modelo do esqueleto não carregou. Verifique sua conexão e recarregue a página.","unknown":"erro desconhecido"},"de":{"loading":"Das 3D-Skelett wird geladen …","start_fail":"Bone Atlas konnte nicht starten ({err}). Lade die Seite neu. Wenn das nur in diesem Browser passiert, blockiert wahrscheinlich eine Erweiterung oder Datenschutzeinstellung einen Teil der Seite.","engine_fail":"Die 3D-Engine wurde nicht geladen. Ein Inhaltsblocker, DNS-Filter oder eine strenge Datenschutzeinstellung blockiert möglicherweise die Skripte dieser Seite.","webgl_fail":"In diesem Browser ist 3D-Grafik (WebGL) ausgeschaltet oder nicht verfügbar, daher kann das Skelett nicht gezeichnet werden. Prüfe in Firefox, ob webgl.disabled in about:config auf false steht und die Hardwarebeschleunigung aktiv ist.","model_fail":"Das Skelettmodell wurde nicht geladen. Prüfe deine Verbindung und lade die Seite neu.","unknown":"unbekannter Fehler"},"la":{"loading":"Loading the 3D skeleton…","start_fail":"Bone Atlas couldn’t start ({err}). Try reloading. If it keeps happening in this browser only, an extension or privacy setting is probably blocking part of the page.","engine_fail":"The 3D engine didn’t load. A content blocker, DNS filter or strict privacy setting may be blocking this page’s scripts.","webgl_fail":"This browser has 3D graphics (WebGL) switched off or unavailable, so the skeleton can’t be drawn. In Firefox, check that webgl.disabled is false in about:config and that hardware acceleration is on.","model_fail":"The skeleton model didn’t load. Check your connection and reload the page.","unknown":"unknown error"}};
-  // start-up text in the chosen language ({err} is filled in)
-  window.__atlasBoot = function (key, err) {
-    var s = (BOOT && (BOOT[window.__atlasLang] || BOOT.en)[key]) || '';
-    return s.replace('{err}', err || '');
-  };
-  document.documentElement.lang = { en: 'en', fr: 'fr', es: 'es', pt: 'pt-BR', de: 'de', la: 'la' }[window.__atlasLang];
-  var m = document.getElementById('loadMsg');
-  if (m) m.textContent = window.__atlasBoot('loading');
-})();
+/* The language (/js/language.js): a ?lang= link, then the one picked on this page before, then the one picked last
+   on the site, then the browser's, then English. Picked before the app runs, so the loading card is in it too. */
+SiteLanguage.start({
+  tool: 'bone-atlas',
+  langs: ['en', 'fr', 'es', 'pt', 'de', 'la'],
+  namesOnly: ['la'],   // names in that language, the rest of the page in English
+  legacy: ['the206.lang'],   // where the choice was saved before the site-wide helper
+  // start-up text, shown before the atlas's code runs ({err} is filled in)
+  boot: {"en": {"loading": "Loading the 3D skeleton…", "start_fail": "Bone Atlas couldn’t start ({err}). Try reloading. If it keeps happening in this browser only, an extension or privacy setting is probably blocking part of the page.", "engine_fail": "The 3D engine didn’t load. A content blocker, DNS filter or strict privacy setting may be blocking this page’s scripts.", "webgl_fail": "This browser has 3D graphics (WebGL) switched off or unavailable, so the skeleton can’t be drawn. In Firefox, check that webgl.disabled is false in about:config and that hardware acceleration is on.", "model_fail": "The skeleton model didn’t load. Check your connection and reload the page.", "unknown": "unknown error"}, "fr": {"loading": "Chargement du squelette 3D…", "start_fail": "Bone Atlas n’a pas pu démarrer ({err}). Rechargez la page. Si cela ne se produit que dans ce navigateur, une extension ou un paramètre de confidentialité bloque probablement une partie de la page.", "engine_fail": "Le moteur 3D ne s’est pas chargé. Un bloqueur de contenu, un filtre DNS ou un paramètre de confidentialité strict bloque peut-être les scripts de cette page.", "webgl_fail": "Les graphismes 3D (WebGL) sont désactivés ou indisponibles dans ce navigateur : le squelette ne peut donc pas s’afficher. Dans Firefox, vérifiez que webgl.disabled vaut false dans about:config et que l’accélération matérielle est activée.", "model_fail": "Le modèle du squelette ne s’est pas chargé. Vérifiez votre connexion et rechargez la page.", "unknown": "erreur inconnue"}, "es": {"loading": "Cargando el esqueleto 3D…", "start_fail": "Bone Atlas no pudo iniciarse ({err}). Prueba a recargar. Si solo ocurre en este navegador, probablemente una extensión o un ajuste de privacidad esté bloqueando parte de la página.", "engine_fail": "El motor 3D no se cargó. Puede que un bloqueador de contenido, un filtro DNS o un ajuste de privacidad estricto esté bloqueando los scripts de esta página.", "webgl_fail": "Este navegador tiene los gráficos 3D (WebGL) desactivados o no disponibles, así que no se puede dibujar el esqueleto. En Firefox, comprueba que webgl.disabled sea false en about:config y que la aceleración por hardware esté activada.", "model_fail": "El modelo del esqueleto no se cargó. Comprueba tu conexión y recarga la página.", "unknown": "error desconocido"}, "pt": {"loading": "Carregando o esqueleto 3D…", "start_fail": "O Bone Atlas não conseguiu iniciar ({err}). Tente recarregar. Se isso só acontece neste navegador, provavelmente uma extensão ou configuração de privacidade está bloqueando parte da página.", "engine_fail": "O motor 3D não carregou. Um bloqueador de conteúdo, filtro de DNS ou configuração de privacidade rígida pode estar bloqueando os scripts desta página.", "webgl_fail": "Este navegador está com os gráficos 3D (WebGL) desativados ou indisponíveis, então o esqueleto não pode ser desenhado. No Firefox, verifique se webgl.disabled está como false em about:config e se a aceleração de hardware está ativada.", "model_fail": "O modelo do esqueleto não carregou. Verifique sua conexão e recarregue a página.", "unknown": "erro desconhecido"}, "de": {"loading": "Das 3D-Skelett wird geladen …", "start_fail": "Bone Atlas konnte nicht starten ({err}). Lade die Seite neu. Wenn das nur in diesem Browser passiert, blockiert wahrscheinlich eine Erweiterung oder Datenschutzeinstellung einen Teil der Seite.", "engine_fail": "Die 3D-Engine wurde nicht geladen. Ein Inhaltsblocker, DNS-Filter oder eine strenge Datenschutzeinstellung blockiert möglicherweise die Skripte dieser Seite.", "webgl_fail": "In diesem Browser ist 3D-Grafik (WebGL) ausgeschaltet oder nicht verfügbar, daher kann das Skelett nicht gezeichnet werden. Prüfe in Firefox, ob webgl.disabled in about:config auf false steht und die Hardwarebeschleunigung aktiv ist.", "model_fail": "Das Skelettmodell wurde nicht geladen. Prüfe deine Verbindung und lade die Seite neu.", "unknown": "unbekannter Fehler"}},
+});
+</script>
 
+<script>
 /* Start-up watchdog (plain script, so it runs even if the 3D code is blocked): if anything stops the app
    from starting, say what happened on the loading card instead of leaving it spinning. */
 (function () {
+  var boot = function (key, vars) { return window.SiteLanguage ? SiteLanguage.bootText(key, vars) : 'This page couldn’t start. Try reloading.'; };
   function say(msg) {
     var card = document.getElementById('loading'), m = document.getElementById('loadMsg');
     if (!card || !m || window.__atlas || window.__atlasFatal) return;
@@ -248,21 +259,21 @@
   }
   function onErr(text) {
     if (window.__atlas || /ResizeObserver/.test(text || '')) return;
-    say(window.__atlasBoot('start_fail', text || window.__atlasBoot('unknown')));
+    say(boot('start_fail', { err: text || boot('unknown') }));
   }
   window.addEventListener('error', function (e) { onErr(e.message); });
   window.addEventListener('unhandledrejection', function (e) { onErr(e.reason && (e.reason.message || String(e.reason))); });
   setTimeout(function () {
-    if (!window.__atlasStarted) say(window.__atlasBoot('engine_fail'));
+    if (!window.__atlasStarted) say(boot('engine_fail'));
   }, 15000);
 })();
 </script>
 
 <script type="module">
-// Bone Atlas is the shared atlas engine (./atlas-engine/atlas.js) with this page's markup, the data in data.js
+// Bone Atlas is the shared atlas engine (../atlas-engine/atlas.js) with this page's markup, the data in data.js
 // and the settings below. What each setting does is explained in atlas.js, where it is read.
 import DATA from './data.js';
-import { startAtlas } from './atlas-engine/atlas.js';
+import { startAtlas } from '../atlas-engine/atlas.js';
 
 // which stretch of the spine a vertebra or disc belongs to, from its id (c3, disc_t4_t5, l2): c, t or l
 const spineSeg = (d) => { const m = /^(?:disc_)?([ctl])\d/.exec(d.id || ''); return m ? m[1] : null; };
@@ -297,7 +308,6 @@ await startAtlas({
   calloutNearSide: false,
   calloutWraps: true,          // long names (Latin phalanges) wrap within the screen
   reviewNamesPiece: true,      // after an answer, the label names the bone itself, also in the Main set
-  languageNamesBoth: true,     // the language menu reads "Deutsch (German)"
   // what a search looks through: the bone's names (everyday, technical, in the language in use) and its group's
   searchText: (u, g, names) => [u.name, u.tech, g.name, u.key, ...names(u), ...names(g)].join(' '),
 
@@ -344,6 +354,15 @@ await startAtlas({
   },
   // Sound-alikes trusted only next to "left" / "right": on their own they're ordinary words
   voiceSidedOnly: { ears: ['year'], feet: ['food', 'feat'], arms: ['alarm'] },
+
+  // Practice and Test can ask for the name to be typed: the bone solid, the rest of the skeleton a ghost around it.
+  // A name counts without its side ("femur" for the right femur), in English and in the language in use; these are the
+  // side words of every language the atlas has
+  nameIt: {
+    rest: 0.1, faint: { cartilage: 0.1, disc: 0.1, tooth: 0.1 }, filler: ['the', 'bone'],
+    sides: ['right', 'left', 'droit', 'droite', 'gauche', 'derecho', 'derecha', 'izquierdo', 'izquierda', 'direito', 'direita', 'esquerdo', 'esquerda',
+      'rechts', 'links', 'rechte', 'rechter', 'rechtes', 'linke', 'linker', 'linkes', 'dexter', 'dextra', 'dextrae', 'dextri', 'dextrum', 'sinister', 'sinistra', 'sinistrae', 'sinistri', 'sinistrum'],
+  },
 
   noteRows: [],                // no Study notes here
 });

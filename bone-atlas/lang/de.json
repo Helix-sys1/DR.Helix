@@ -1,0 +1,1132 @@
+{
+	"ui": {
+		"canvas_aria": "3D-Skelett. Zum Drehen ziehen, zum Zoomen scrollen oder mit zwei Fingern ziehen, zum Auswählen auf einen Knochen klicken.",
+		"loading_name": "Skelett",
+		"review_hint": "Klicke auf einen Knochen, um seinen Namen zu sehen.",
+		"voice_title": "Sprachbefehle (V), nur auf Englisch. Sag einen Bereich, z. B. „left foot“, „spine“ oder „whole body“.",
+		"left_title": "Die linke Seite des Skeletts selbst",
+		"right_title": "Die rechte Seite des Skeletts selbst",
+		"look_left_title": "Die linke Seite des Skeletts ansehen",
+		"look_right_title": "Die rechte Seite des Skeletts ansehen",
+		"xray_title": "Durch Knochen hindurchsehen und Knochen anklicken, die in anderen verborgen sind (X)",
+		"peel_title": "Klicke auf einen Knochen, um ihn auszublenden und darunter zu sehen. Umschalt+Klick geht auch.",
+		"view_hint_narrow": "Der Zoom bewegt nur die Kamera; die Fragen bleiben gleich. Mit Röntgen erreichst du Knochen, die in anderen verborgen sind. „Ausblenden“ blendet den angetippten Knochen aus.",
+		"bones": "Knochen",
+		"set_names": "60 Namen",
+		"set_all": "Alle 206",
+		"find_bone": "Knochen suchen",
+		"search_ph": "z. B. Hakenbein, 7. Rippe, Th4",
+		"what_all": "Der Wechsel zu allen 206 Knochen",
+		"what_names": "Der Wechsel zu den 60 Namen",
+		"ctx_tooth": "Das ist ein Zahn. Zähne sind keine Knochen und gehören daher nicht zu den 206.",
+		"ctx_cartilage": "Das ist Rippenknorpel, der eine Rippe mit dem Brustbein verbindet. Er ist kein Knochen.",
+		"ctx_disc": "Das ist eine Knorpelscheibe zwischen zwei Knochen, kein Knochen.",
+		"ctx_other": "Das ist keiner der 206 Knochen.",
+		"thats_the_reveal": "Angeklickt: {name}. Klicke auf den leuchtenden Knochen.",
+		"show_hidden": {
+			"one": "{n} ausgeblendeten Knochen einblenden",
+			"other": "{n} ausgeblendete Knochen einblenden"
+		},
+		"zoom_head": "Kopf",
+		"zoom_ears": "Ohren",
+		"zoom_spine": "Wirbelsäule",
+		"zoom_ribcage": "Brustkorb",
+		"zoom_cervical": "Halswirbelsäule",
+		"zoom_thoracic": "Brustwirbelsäule",
+		"zoom_lumbar": "Lendenwirbelsäule",
+		"one_ear": [
+			"Linkes Ohr",
+			"Rechtes Ohr"
+		],
+		"voice_listening": "Hört zu … auf Englisch: „left foot“, „spine“, „whole body“",
+		"study_meta": "{i} von {n} · ← → oder auf einen Knochen klicken",
+		"no_bones": "Keine Knochen in dieser Auswahl",
+		"reveal_eyebrow": "Hier ist er. Klicke auf den leuchtenden Knochen",
+		"rail_title": "Eine Region nach der anderen",
+		"hint_study": "Geh mit den Pfeiltasten durch die Knochen oder klicke auf einen Knochen, um seinen Namen zu sehen. Ohne Wertung.",
+		"hint_practice": "Finde jeden Knochen. Fehler kommen ein paar Fragen später wieder, bis du sie richtig hast.",
+		"hint_test": "Jeder Knochen einmal, auf Zeit, ohne Hilfe. Deine Bestleistung wird in diesem Browser gespeichert.",
+		"hints_hint_on": "Die Namen enthalten die deutschen Alltagsnamen, z. B. „Patella (Kniescheibe)“ und „Os metacarpale V (kleiner Finger)“.",
+		"hints_hint_off": "Nur Fachbegriffe, z. B. „Patella“ und „Phalanx distalis, 5. Zehe“. Finger und Zehen werden ab Daumen und Großzehe gezählt (1.).",
+		"toast_hints_off": "Hinweise aus: nur Fachbegriffe",
+		"peel_on": "Ausblenden an: Ein Klick auf einen Knochen blendet ihn aus.",
+		"keys_common": "<kbd>1</kbd>–<kbd>0</kbd> Zoom (nochmal für links, dann rechts) · <kbd>Esc</kbd> herauszoomen · <kbd>V</kbd> Sprachbefehle (auf Englisch) · <kbd>H</kbd> Hinweise · <kbd>X</kbd> Röntgen · <kbd>C</kbd> klare Ansicht · <kbd>R</kbd> zentrieren"
+	},
+	"units": {
+		"frontal": [
+			"Os frontale (Stirnbein)",
+			"Os frontale"
+		],
+		"parietal_l": [
+			"Os parietale links (Scheitelbein)",
+			"Os parietale links"
+		],
+		"parietal_r": [
+			"Os parietale rechts (Scheitelbein)",
+			"Os parietale rechts"
+		],
+		"temporal_l": [
+			"Os temporale links (Schläfenbein)",
+			"Os temporale links"
+		],
+		"temporal_r": [
+			"Os temporale rechts (Schläfenbein)",
+			"Os temporale rechts"
+		],
+		"occipital": [
+			"Os occipitale (Hinterhauptsbein)",
+			"Os occipitale"
+		],
+		"sphenoid": [
+			"Os sphenoidale (Keilbein)",
+			"Os sphenoidale"
+		],
+		"ethmoid": [
+			"Os ethmoidale (Siebbein)",
+			"Os ethmoidale"
+		],
+		"nasal_l": [
+			"Os nasale links (Nasenbein)",
+			"Os nasale links"
+		],
+		"nasal_r": [
+			"Os nasale rechts (Nasenbein)",
+			"Os nasale rechts"
+		],
+		"lacrimal_l": [
+			"Os lacrimale links (Tränenbein)",
+			"Os lacrimale links"
+		],
+		"lacrimal_r": [
+			"Os lacrimale rechts (Tränenbein)",
+			"Os lacrimale rechts"
+		],
+		"zygomatic_l": [
+			"Os zygomaticum links (Jochbein)",
+			"Os zygomaticum links"
+		],
+		"zygomatic_r": [
+			"Os zygomaticum rechts (Jochbein)",
+			"Os zygomaticum rechts"
+		],
+		"maxilla_l": [
+			"Maxilla links (Oberkiefer)",
+			"Maxilla links"
+		],
+		"maxilla_r": [
+			"Maxilla rechts (Oberkiefer)",
+			"Maxilla rechts"
+		],
+		"palatine_l": [
+			"Os palatinum links (Gaumenbein)",
+			"Os palatinum links"
+		],
+		"palatine_r": [
+			"Os palatinum rechts (Gaumenbein)",
+			"Os palatinum rechts"
+		],
+		"inf_concha_l": [
+			"Concha nasalis inferior links (untere Nasenmuschel)",
+			"Concha nasalis inferior links"
+		],
+		"inf_concha_r": [
+			"Concha nasalis inferior rechts (untere Nasenmuschel)",
+			"Concha nasalis inferior rechts"
+		],
+		"vomer": [
+			"Vomer (Pflugscharbein)",
+			"Vomer"
+		],
+		"mandible": [
+			"Mandibula (Unterkiefer)",
+			"Mandibula"
+		],
+		"hyoid": [
+			"Os hyoideum (Zungenbein)",
+			"Os hyoideum"
+		],
+		"malleus_l": [
+			"Malleus links (Hammer)",
+			"Malleus links"
+		],
+		"malleus_r": [
+			"Malleus rechts (Hammer)",
+			"Malleus rechts"
+		],
+		"incus_l": [
+			"Incus links (Amboss)",
+			"Incus links"
+		],
+		"incus_r": [
+			"Incus rechts (Amboss)",
+			"Incus rechts"
+		],
+		"stapes_l": [
+			"Stapes links (Steigbügel)",
+			"Stapes links"
+		],
+		"stapes_r": [
+			"Stapes rechts (Steigbügel)",
+			"Stapes rechts"
+		],
+		"c3": [
+			"Vertebra C3 (Halswirbel)",
+			"Vertebra C3"
+		],
+		"c4": [
+			"Vertebra C4 (Halswirbel)",
+			"Vertebra C4"
+		],
+		"c5": [
+			"Vertebra C5 (Halswirbel)",
+			"Vertebra C5"
+		],
+		"c6": [
+			"Vertebra C6 (Halswirbel)",
+			"Vertebra C6"
+		],
+		"c7": [
+			"Vertebra C7 (Halswirbel)",
+			"Vertebra C7"
+		],
+		"t1": [
+			"Vertebra Th1 (Brustwirbel)",
+			"Vertebra Th1"
+		],
+		"t2": [
+			"Vertebra Th2 (Brustwirbel)",
+			"Vertebra Th2"
+		],
+		"t3": [
+			"Vertebra Th3 (Brustwirbel)",
+			"Vertebra Th3"
+		],
+		"t4": [
+			"Vertebra Th4 (Brustwirbel)",
+			"Vertebra Th4"
+		],
+		"t5": [
+			"Vertebra Th5 (Brustwirbel)",
+			"Vertebra Th5"
+		],
+		"t6": [
+			"Vertebra Th6 (Brustwirbel)",
+			"Vertebra Th6"
+		],
+		"t7": [
+			"Vertebra Th7 (Brustwirbel)",
+			"Vertebra Th7"
+		],
+		"t8": [
+			"Vertebra Th8 (Brustwirbel)",
+			"Vertebra Th8"
+		],
+		"t9": [
+			"Vertebra Th9 (Brustwirbel)",
+			"Vertebra Th9"
+		],
+		"t10": [
+			"Vertebra Th10 (Brustwirbel)",
+			"Vertebra Th10"
+		],
+		"t11": [
+			"Vertebra Th11 (Brustwirbel)",
+			"Vertebra Th11"
+		],
+		"t12": [
+			"Vertebra Th12 (Brustwirbel)",
+			"Vertebra Th12"
+		],
+		"l1": [
+			"Vertebra L1 (Lendenwirbel)",
+			"Vertebra L1"
+		],
+		"l2": [
+			"Vertebra L2 (Lendenwirbel)",
+			"Vertebra L2"
+		],
+		"l3": [
+			"Vertebra L3 (Lendenwirbel)",
+			"Vertebra L3"
+		],
+		"l4": [
+			"Vertebra L4 (Lendenwirbel)",
+			"Vertebra L4"
+		],
+		"l5": [
+			"Vertebra L5 (Lendenwirbel)",
+			"Vertebra L5"
+		],
+		"sternum": [
+			"Sternum (Brustbein)",
+			"Sternum"
+		],
+		"rib1_l": [
+			"1. Rippe links"
+		],
+		"rib1_r": [
+			"1. Rippe rechts"
+		],
+		"rib2_l": [
+			"2. Rippe links"
+		],
+		"rib2_r": [
+			"2. Rippe rechts"
+		],
+		"rib3_l": [
+			"3. Rippe links"
+		],
+		"rib3_r": [
+			"3. Rippe rechts"
+		],
+		"rib4_l": [
+			"4. Rippe links"
+		],
+		"rib4_r": [
+			"4. Rippe rechts"
+		],
+		"rib5_l": [
+			"5. Rippe links"
+		],
+		"rib5_r": [
+			"5. Rippe rechts"
+		],
+		"rib6_l": [
+			"6. Rippe links"
+		],
+		"rib6_r": [
+			"6. Rippe rechts"
+		],
+		"rib7_l": [
+			"7. Rippe links"
+		],
+		"rib7_r": [
+			"7. Rippe rechts"
+		],
+		"rib8_l": [
+			"8. Rippe links"
+		],
+		"rib8_r": [
+			"8. Rippe rechts"
+		],
+		"rib9_l": [
+			"9. Rippe links"
+		],
+		"rib9_r": [
+			"9. Rippe rechts"
+		],
+		"rib10_l": [
+			"10. Rippe links"
+		],
+		"rib10_r": [
+			"10. Rippe rechts"
+		],
+		"rib11_l": [
+			"11. Rippe links"
+		],
+		"rib11_r": [
+			"11. Rippe rechts"
+		],
+		"rib12_l": [
+			"12. Rippe links"
+		],
+		"rib12_r": [
+			"12. Rippe rechts"
+		],
+		"hip_l": [
+			"Os coxae links (Hüftbein)",
+			"Os coxae links"
+		],
+		"hip_r": [
+			"Os coxae rechts (Hüftbein)",
+			"Os coxae rechts"
+		],
+		"sacrum": [
+			"Os sacrum (Kreuzbein)",
+			"Os sacrum"
+		],
+		"coccyx": [
+			"Os coccygis (Steißbein)",
+			"Os coccygis"
+		],
+		"clavicle_l": [
+			"Clavicula links (Schlüsselbein)",
+			"Clavicula links"
+		],
+		"clavicle_r": [
+			"Clavicula rechts (Schlüsselbein)",
+			"Clavicula rechts"
+		],
+		"scapula_l": [
+			"Scapula links (Schulterblatt)",
+			"Scapula links"
+		],
+		"scapula_r": [
+			"Scapula rechts (Schulterblatt)",
+			"Scapula rechts"
+		],
+		"humerus_l": [
+			"Humerus links (Oberarmknochen)",
+			"Humerus links"
+		],
+		"humerus_r": [
+			"Humerus rechts (Oberarmknochen)",
+			"Humerus rechts"
+		],
+		"radius_l": [
+			"Radius links (Speiche)",
+			"Radius links"
+		],
+		"radius_r": [
+			"Radius rechts (Speiche)",
+			"Radius rechts"
+		],
+		"ulna_l": [
+			"Ulna links (Elle)",
+			"Ulna links"
+		],
+		"ulna_r": [
+			"Ulna rechts (Elle)",
+			"Ulna rechts"
+		],
+		"scaphoid_l": [
+			"Os scaphoideum links (Kahnbein)",
+			"Os scaphoideum links"
+		],
+		"scaphoid_r": [
+			"Os scaphoideum rechts (Kahnbein)",
+			"Os scaphoideum rechts"
+		],
+		"lunate_l": [
+			"Os lunatum links (Mondbein)",
+			"Os lunatum links"
+		],
+		"lunate_r": [
+			"Os lunatum rechts (Mondbein)",
+			"Os lunatum rechts"
+		],
+		"triquetrum_l": [
+			"Os triquetrum links (Dreiecksbein)",
+			"Os triquetrum links"
+		],
+		"triquetrum_r": [
+			"Os triquetrum rechts (Dreiecksbein)",
+			"Os triquetrum rechts"
+		],
+		"pisiform_l": [
+			"Os pisiforme links (Erbsenbein)",
+			"Os pisiforme links"
+		],
+		"pisiform_r": [
+			"Os pisiforme rechts (Erbsenbein)",
+			"Os pisiforme rechts"
+		],
+		"hamate_l": [
+			"Os hamatum links (Hakenbein)",
+			"Os hamatum links"
+		],
+		"hamate_r": [
+			"Os hamatum rechts (Hakenbein)",
+			"Os hamatum rechts"
+		],
+		"capitate_l": [
+			"Os capitatum links (Kopfbein)",
+			"Os capitatum links"
+		],
+		"capitate_r": [
+			"Os capitatum rechts (Kopfbein)",
+			"Os capitatum rechts"
+		],
+		"trapezoid_l": [
+			"Os trapezoideum links (kleines Vielecksbein)",
+			"Os trapezoideum links"
+		],
+		"trapezoid_r": [
+			"Os trapezoideum rechts (kleines Vielecksbein)",
+			"Os trapezoideum rechts"
+		],
+		"trapezium_l": [
+			"Os trapezium links (großes Vielecksbein)",
+			"Os trapezium links"
+		],
+		"trapezium_r": [
+			"Os trapezium rechts (großes Vielecksbein)",
+			"Os trapezium rechts"
+		],
+		"mc1_l": [
+			"Os metacarpale I links (Daumen)",
+			"Os metacarpale I links"
+		],
+		"mc1_r": [
+			"Os metacarpale I rechts (Daumen)",
+			"Os metacarpale I rechts"
+		],
+		"mc2_l": [
+			"Os metacarpale II links (Zeigefinger)",
+			"Os metacarpale II links"
+		],
+		"mc2_r": [
+			"Os metacarpale II rechts (Zeigefinger)",
+			"Os metacarpale II rechts"
+		],
+		"mc3_l": [
+			"Os metacarpale III links (Mittelfinger)",
+			"Os metacarpale III links"
+		],
+		"mc3_r": [
+			"Os metacarpale III rechts (Mittelfinger)",
+			"Os metacarpale III rechts"
+		],
+		"mc4_l": [
+			"Os metacarpale IV links (Ringfinger)",
+			"Os metacarpale IV links"
+		],
+		"mc4_r": [
+			"Os metacarpale IV rechts (Ringfinger)",
+			"Os metacarpale IV rechts"
+		],
+		"mc5_l": [
+			"Os metacarpale V links (kleiner Finger)",
+			"Os metacarpale V links"
+		],
+		"mc5_r": [
+			"Os metacarpale V rechts (kleiner Finger)",
+			"Os metacarpale V rechts"
+		],
+		"pph1_hand_l": [
+			"Phalanx proximalis links — Daumen",
+			"Phalanx proximalis links, 1. Finger"
+		],
+		"pph1_hand_r": [
+			"Phalanx proximalis rechts — Daumen",
+			"Phalanx proximalis rechts, 1. Finger"
+		],
+		"pph2_hand_l": [
+			"Phalanx proximalis links — Zeigefinger",
+			"Phalanx proximalis links, 2. Finger"
+		],
+		"pph2_hand_r": [
+			"Phalanx proximalis rechts — Zeigefinger",
+			"Phalanx proximalis rechts, 2. Finger"
+		],
+		"pph3_hand_l": [
+			"Phalanx proximalis links — Mittelfinger",
+			"Phalanx proximalis links, 3. Finger"
+		],
+		"pph3_hand_r": [
+			"Phalanx proximalis rechts — Mittelfinger",
+			"Phalanx proximalis rechts, 3. Finger"
+		],
+		"pph4_hand_l": [
+			"Phalanx proximalis links — Ringfinger",
+			"Phalanx proximalis links, 4. Finger"
+		],
+		"pph4_hand_r": [
+			"Phalanx proximalis rechts — Ringfinger",
+			"Phalanx proximalis rechts, 4. Finger"
+		],
+		"pph5_hand_l": [
+			"Phalanx proximalis links — kleiner Finger",
+			"Phalanx proximalis links, 5. Finger"
+		],
+		"pph5_hand_r": [
+			"Phalanx proximalis rechts — kleiner Finger",
+			"Phalanx proximalis rechts, 5. Finger"
+		],
+		"mph2_hand_l": [
+			"Phalanx media links — Zeigefinger",
+			"Phalanx media links, 2. Finger"
+		],
+		"mph2_hand_r": [
+			"Phalanx media rechts — Zeigefinger",
+			"Phalanx media rechts, 2. Finger"
+		],
+		"mph3_hand_l": [
+			"Phalanx media links — Mittelfinger",
+			"Phalanx media links, 3. Finger"
+		],
+		"mph3_hand_r": [
+			"Phalanx media rechts — Mittelfinger",
+			"Phalanx media rechts, 3. Finger"
+		],
+		"mph4_hand_l": [
+			"Phalanx media links — Ringfinger",
+			"Phalanx media links, 4. Finger"
+		],
+		"mph4_hand_r": [
+			"Phalanx media rechts — Ringfinger",
+			"Phalanx media rechts, 4. Finger"
+		],
+		"mph5_hand_l": [
+			"Phalanx media links — kleiner Finger",
+			"Phalanx media links, 5. Finger"
+		],
+		"mph5_hand_r": [
+			"Phalanx media rechts — kleiner Finger",
+			"Phalanx media rechts, 5. Finger"
+		],
+		"dph1_hand_l": [
+			"Phalanx distalis links — Daumen",
+			"Phalanx distalis links, 1. Finger"
+		],
+		"dph1_hand_r": [
+			"Phalanx distalis rechts — Daumen",
+			"Phalanx distalis rechts, 1. Finger"
+		],
+		"dph2_hand_l": [
+			"Phalanx distalis links — Zeigefinger",
+			"Phalanx distalis links, 2. Finger"
+		],
+		"dph2_hand_r": [
+			"Phalanx distalis rechts — Zeigefinger",
+			"Phalanx distalis rechts, 2. Finger"
+		],
+		"dph3_hand_l": [
+			"Phalanx distalis links — Mittelfinger",
+			"Phalanx distalis links, 3. Finger"
+		],
+		"dph3_hand_r": [
+			"Phalanx distalis rechts — Mittelfinger",
+			"Phalanx distalis rechts, 3. Finger"
+		],
+		"dph4_hand_l": [
+			"Phalanx distalis links — Ringfinger",
+			"Phalanx distalis links, 4. Finger"
+		],
+		"dph4_hand_r": [
+			"Phalanx distalis rechts — Ringfinger",
+			"Phalanx distalis rechts, 4. Finger"
+		],
+		"dph5_hand_l": [
+			"Phalanx distalis links — kleiner Finger",
+			"Phalanx distalis links, 5. Finger"
+		],
+		"dph5_hand_r": [
+			"Phalanx distalis rechts — kleiner Finger",
+			"Phalanx distalis rechts, 5. Finger"
+		],
+		"femur_l": [
+			"Femur links (Oberschenkelknochen)",
+			"Femur links"
+		],
+		"femur_r": [
+			"Femur rechts (Oberschenkelknochen)",
+			"Femur rechts"
+		],
+		"patella_l": [
+			"Patella links (Kniescheibe)",
+			"Patella links"
+		],
+		"patella_r": [
+			"Patella rechts (Kniescheibe)",
+			"Patella rechts"
+		],
+		"tibia_l": [
+			"Tibia links (Schienbein)",
+			"Tibia links"
+		],
+		"tibia_r": [
+			"Tibia rechts (Schienbein)",
+			"Tibia rechts"
+		],
+		"fibula_l": [
+			"Fibula links (Wadenbein)",
+			"Fibula links"
+		],
+		"fibula_r": [
+			"Fibula rechts (Wadenbein)",
+			"Fibula rechts"
+		],
+		"talus_l": [
+			"Talus links (Sprungbein)",
+			"Talus links"
+		],
+		"talus_r": [
+			"Talus rechts (Sprungbein)",
+			"Talus rechts"
+		],
+		"calcaneus_l": [
+			"Calcaneus links (Fersenbein)",
+			"Calcaneus links"
+		],
+		"calcaneus_r": [
+			"Calcaneus rechts (Fersenbein)",
+			"Calcaneus rechts"
+		],
+		"navicular_l": [
+			"Os naviculare links (Kahnbein)",
+			"Os naviculare links"
+		],
+		"navicular_r": [
+			"Os naviculare rechts (Kahnbein)",
+			"Os naviculare rechts"
+		],
+		"med_cuneiform_l": [
+			"Os cuneiforme mediale links (inneres Keilbein)",
+			"Os cuneiforme mediale links"
+		],
+		"med_cuneiform_r": [
+			"Os cuneiforme mediale rechts (inneres Keilbein)",
+			"Os cuneiforme mediale rechts"
+		],
+		"int_cuneiform_l": [
+			"Os cuneiforme intermedium links (mittleres Keilbein)",
+			"Os cuneiforme intermedium links"
+		],
+		"int_cuneiform_r": [
+			"Os cuneiforme intermedium rechts (mittleres Keilbein)",
+			"Os cuneiforme intermedium rechts"
+		],
+		"lat_cuneiform_l": [
+			"Os cuneiforme laterale links (äußeres Keilbein)",
+			"Os cuneiforme laterale links"
+		],
+		"lat_cuneiform_r": [
+			"Os cuneiforme laterale rechts (äußeres Keilbein)",
+			"Os cuneiforme laterale rechts"
+		],
+		"cuboid_l": [
+			"Os cuboideum links (Würfelbein)",
+			"Os cuboideum links"
+		],
+		"cuboid_r": [
+			"Os cuboideum rechts (Würfelbein)",
+			"Os cuboideum rechts"
+		],
+		"mt1_l": [
+			"Os metatarsale I links (Großzehe)",
+			"Os metatarsale I links"
+		],
+		"mt1_r": [
+			"Os metatarsale I rechts (Großzehe)",
+			"Os metatarsale I rechts"
+		],
+		"mt2_l": [
+			"Os metatarsale II links (2. Zehe)",
+			"Os metatarsale II links"
+		],
+		"mt2_r": [
+			"Os metatarsale II rechts (2. Zehe)",
+			"Os metatarsale II rechts"
+		],
+		"mt3_l": [
+			"Os metatarsale III links (3. Zehe)",
+			"Os metatarsale III links"
+		],
+		"mt3_r": [
+			"Os metatarsale III rechts (3. Zehe)",
+			"Os metatarsale III rechts"
+		],
+		"mt4_l": [
+			"Os metatarsale IV links (4. Zehe)",
+			"Os metatarsale IV links"
+		],
+		"mt4_r": [
+			"Os metatarsale IV rechts (4. Zehe)",
+			"Os metatarsale IV rechts"
+		],
+		"mt5_l": [
+			"Os metatarsale V links (kleine Zehe)",
+			"Os metatarsale V links"
+		],
+		"mt5_r": [
+			"Os metatarsale V rechts (kleine Zehe)",
+			"Os metatarsale V rechts"
+		],
+		"pph1_foot_l": [
+			"Phalanx proximalis links — Großzehe",
+			"Phalanx proximalis links, 1. Zehe"
+		],
+		"pph1_foot_r": [
+			"Phalanx proximalis rechts — Großzehe",
+			"Phalanx proximalis rechts, 1. Zehe"
+		],
+		"pph2_foot_l": [
+			"Phalanx proximalis links — 2. Zehe",
+			"Phalanx proximalis links, 2. Zehe"
+		],
+		"pph2_foot_r": [
+			"Phalanx proximalis rechts — 2. Zehe",
+			"Phalanx proximalis rechts, 2. Zehe"
+		],
+		"pph3_foot_l": [
+			"Phalanx proximalis links — 3. Zehe",
+			"Phalanx proximalis links, 3. Zehe"
+		],
+		"pph3_foot_r": [
+			"Phalanx proximalis rechts — 3. Zehe",
+			"Phalanx proximalis rechts, 3. Zehe"
+		],
+		"pph4_foot_l": [
+			"Phalanx proximalis links — 4. Zehe",
+			"Phalanx proximalis links, 4. Zehe"
+		],
+		"pph4_foot_r": [
+			"Phalanx proximalis rechts — 4. Zehe",
+			"Phalanx proximalis rechts, 4. Zehe"
+		],
+		"pph5_foot_l": [
+			"Phalanx proximalis links — kleine Zehe",
+			"Phalanx proximalis links, 5. Zehe"
+		],
+		"pph5_foot_r": [
+			"Phalanx proximalis rechts — kleine Zehe",
+			"Phalanx proximalis rechts, 5. Zehe"
+		],
+		"mph2_foot_l": [
+			"Phalanx media links — 2. Zehe",
+			"Phalanx media links, 2. Zehe"
+		],
+		"mph2_foot_r": [
+			"Phalanx media rechts — 2. Zehe",
+			"Phalanx media rechts, 2. Zehe"
+		],
+		"mph3_foot_l": [
+			"Phalanx media links — 3. Zehe",
+			"Phalanx media links, 3. Zehe"
+		],
+		"mph3_foot_r": [
+			"Phalanx media rechts — 3. Zehe",
+			"Phalanx media rechts, 3. Zehe"
+		],
+		"mph4_foot_l": [
+			"Phalanx media links — 4. Zehe",
+			"Phalanx media links, 4. Zehe"
+		],
+		"mph4_foot_r": [
+			"Phalanx media rechts — 4. Zehe",
+			"Phalanx media rechts, 4. Zehe"
+		],
+		"mph5_foot_l": [
+			"Phalanx media links — kleine Zehe",
+			"Phalanx media links, 5. Zehe"
+		],
+		"mph5_foot_r": [
+			"Phalanx media rechts — kleine Zehe",
+			"Phalanx media rechts, 5. Zehe"
+		],
+		"dph1_foot_l": [
+			"Phalanx distalis links — Großzehe",
+			"Phalanx distalis links, 1. Zehe"
+		],
+		"dph1_foot_r": [
+			"Phalanx distalis rechts — Großzehe",
+			"Phalanx distalis rechts, 1. Zehe"
+		],
+		"dph2_foot_l": [
+			"Phalanx distalis links — 2. Zehe",
+			"Phalanx distalis links, 2. Zehe"
+		],
+		"dph2_foot_r": [
+			"Phalanx distalis rechts — 2. Zehe",
+			"Phalanx distalis rechts, 2. Zehe"
+		],
+		"dph3_foot_l": [
+			"Phalanx distalis links — 3. Zehe",
+			"Phalanx distalis links, 3. Zehe"
+		],
+		"dph3_foot_r": [
+			"Phalanx distalis rechts — 3. Zehe",
+			"Phalanx distalis rechts, 3. Zehe"
+		],
+		"dph4_foot_l": [
+			"Phalanx distalis links — 4. Zehe",
+			"Phalanx distalis links, 4. Zehe"
+		],
+		"dph4_foot_r": [
+			"Phalanx distalis rechts — 4. Zehe",
+			"Phalanx distalis rechts, 4. Zehe"
+		],
+		"dph5_foot_l": [
+			"Phalanx distalis links — kleine Zehe",
+			"Phalanx distalis links, 5. Zehe"
+		],
+		"dph5_foot_r": [
+			"Phalanx distalis rechts — kleine Zehe",
+			"Phalanx distalis rechts, 5. Zehe"
+		]
+	},
+	"groups": {
+		"frontal": [
+			"Os frontale (Stirnbein)",
+			"Os frontale"
+		],
+		"parietal": [
+			"Os parietale (Scheitelbein)",
+			"Os parietale"
+		],
+		"temporal": [
+			"Os temporale (Schläfenbein)",
+			"Os temporale"
+		],
+		"occipital": [
+			"Os occipitale (Hinterhauptsbein)",
+			"Os occipitale"
+		],
+		"sphenoid": [
+			"Os sphenoidale (Keilbein)",
+			"Os sphenoidale"
+		],
+		"ethmoid": [
+			"Os ethmoidale (Siebbein)",
+			"Os ethmoidale"
+		],
+		"nasal": [
+			"Os nasale (Nasenbein)",
+			"Os nasale"
+		],
+		"lacrimal": [
+			"Os lacrimale (Tränenbein)",
+			"Os lacrimale"
+		],
+		"zygomatic": [
+			"Os zygomaticum (Jochbein)",
+			"Os zygomaticum"
+		],
+		"maxilla": [
+			"Maxilla (Oberkiefer)",
+			"Maxilla"
+		],
+		"palatine": [
+			"Os palatinum (Gaumenbein)",
+			"Os palatinum"
+		],
+		"inf_concha": [
+			"Concha nasalis inferior (untere Nasenmuschel)",
+			"Concha nasalis inferior"
+		],
+		"vomer": [
+			"Vomer (Pflugscharbein)",
+			"Vomer"
+		],
+		"mandible": [
+			"Mandibula (Unterkiefer)",
+			"Mandibula"
+		],
+		"hyoid": [
+			"Os hyoideum (Zungenbein)",
+			"Os hyoideum"
+		],
+		"malleus": [
+			"Malleus (Hammer)",
+			"Malleus"
+		],
+		"incus": [
+			"Incus (Amboss)",
+			"Incus"
+		],
+		"stapes": [
+			"Stapes (Steigbügel)",
+			"Stapes"
+		],
+		"cervical": [
+			"Vertebra cervicalis (Halswirbel C3–C7)",
+			"Vertebra cervicalis (C3–C7)"
+		],
+		"thoracic": [
+			"Vertebra thoracica (Brustwirbel Th1–Th12)",
+			"Vertebra thoracica (Th1–Th12)"
+		],
+		"lumbar": [
+			"Vertebra lumbalis (Lendenwirbel L1–L5)",
+			"Vertebra lumbalis (L1–L5)"
+		],
+		"sternum": [
+			"Sternum (Brustbein)",
+			"Sternum"
+		],
+		"rib": [
+			"Costa (Rippe)",
+			"Costa"
+		],
+		"hip": [
+			"Os coxae (Hüftbein)",
+			"Os coxae"
+		],
+		"sacrum": [
+			"Os sacrum (Kreuzbein)",
+			"Os sacrum"
+		],
+		"coccyx": [
+			"Os coccygis (Steißbein)",
+			"Os coccygis"
+		],
+		"clavicle": [
+			"Clavicula (Schlüsselbein)",
+			"Clavicula"
+		],
+		"scapula": [
+			"Scapula (Schulterblatt)",
+			"Scapula"
+		],
+		"humerus": [
+			"Humerus (Oberarmknochen)",
+			"Humerus"
+		],
+		"radius": [
+			"Radius (Speiche)",
+			"Radius"
+		],
+		"ulna": [
+			"Ulna (Elle)",
+			"Ulna"
+		],
+		"scaphoid": [
+			"Os scaphoideum (Kahnbein)",
+			"Os scaphoideum"
+		],
+		"lunate": [
+			"Os lunatum (Mondbein)",
+			"Os lunatum"
+		],
+		"triquetrum": [
+			"Os triquetrum (Dreiecksbein)",
+			"Os triquetrum"
+		],
+		"pisiform": [
+			"Os pisiforme (Erbsenbein)",
+			"Os pisiforme"
+		],
+		"hamate": [
+			"Os hamatum (Hakenbein)",
+			"Os hamatum"
+		],
+		"capitate": [
+			"Os capitatum (Kopfbein)",
+			"Os capitatum"
+		],
+		"trapezoid": [
+			"Os trapezoideum (kleines Vielecksbein)",
+			"Os trapezoideum"
+		],
+		"trapezium": [
+			"Os trapezium (großes Vielecksbein)",
+			"Os trapezium"
+		],
+		"metacarpal": [
+			"Os metacarpale (Mittelhandknochen)",
+			"Os metacarpale"
+		],
+		"proximal_ph_hand": [
+			"Phalanx proximalis (Grundglied, Hand)",
+			"Phalanx proximalis (Hand)"
+		],
+		"middle_ph_hand": [
+			"Phalanx media (Mittelglied, Hand)",
+			"Phalanx media (Hand)"
+		],
+		"distal_ph_hand": [
+			"Phalanx distalis (Endglied, Hand)",
+			"Phalanx distalis (Hand)"
+		],
+		"femur": [
+			"Femur (Oberschenkelknochen)",
+			"Femur"
+		],
+		"patella": [
+			"Patella (Kniescheibe)",
+			"Patella"
+		],
+		"tibia": [
+			"Tibia (Schienbein)",
+			"Tibia"
+		],
+		"fibula": [
+			"Fibula (Wadenbein)",
+			"Fibula"
+		],
+		"talus": [
+			"Talus (Sprungbein)",
+			"Talus"
+		],
+		"calcaneus": [
+			"Calcaneus (Fersenbein)",
+			"Calcaneus"
+		],
+		"navicular": [
+			"Os naviculare (Kahnbein)",
+			"Os naviculare"
+		],
+		"med_cuneiform": [
+			"Os cuneiforme mediale (inneres Keilbein)",
+			"Os cuneiforme mediale"
+		],
+		"int_cuneiform": [
+			"Os cuneiforme intermedium (mittleres Keilbein)",
+			"Os cuneiforme intermedium"
+		],
+		"lat_cuneiform": [
+			"Os cuneiforme laterale (äußeres Keilbein)",
+			"Os cuneiforme laterale"
+		],
+		"cuboid": [
+			"Os cuboideum (Würfelbein)",
+			"Os cuboideum"
+		],
+		"metatarsal": [
+			"Os metatarsale (Mittelfußknochen)",
+			"Os metatarsale"
+		],
+		"proximal_ph_foot": [
+			"Phalanx proximalis (Grundglied, Fuß)",
+			"Phalanx proximalis (Fuß)"
+		],
+		"middle_ph_foot": [
+			"Phalanx media (Mittelglied, Fuß)",
+			"Phalanx media (Fuß)"
+		],
+		"distal_ph_foot": [
+			"Phalanx distalis (Endglied, Fuß)",
+			"Phalanx distalis (Fuß)"
+		]
+	},
+	"regions": {
+		"head": "Kopf",
+		"torso": "Rumpf",
+		"leg": "Bein",
+		"foot": "Fuß"
+	},
+	"subs": {
+		"cranium": "Hirnschädel",
+		"face": "Gesicht und Kiefer",
+		"ear": "Ohr",
+		"spine": "Wirbelsäule",
+		"ribcage": "Brustkorb",
+		"pelvis": "Becken",
+		"shoulder": "Schulter",
+		"armbones": "Ober- und Unterarm",
+		"carpals": "Handwurzel",
+		"metacarpals": "Mittelhand",
+		"fingers": "Finger",
+		"thigh": "Oberschenkel und Knie",
+		"lowerleg": "Unterschenkel",
+		"tarsals": "Fußwurzel",
+		"metatarsals": "Mittelfuß",
+		"toes": "Zehen"
+	},
+	"tips": {
+		"all": "206 Knochen in einem typischen erwachsenen Skelett.",
+		"head": "29 Knochen: 22 im Schädel, 6 in den Ohren und das Zungenbein.",
+		"cranium": "Der Hirnschädel hat 8 Knochen: Stirnbein, Hinterhauptsbein, Keilbein, Siebbein sowie je zwei Scheitel- und Schläfenbeine.",
+		"face": "14 Knochen im Gesicht: Nasen-, Tränen-, Joch- und Gaumenbeine, Oberkiefer und untere Nasenmuscheln (jeweils paarig), dazu Pflugscharbein und Unterkiefer. Das Zungenbein liegt unter dem Kiefer und berührt keinen anderen Knochen.",
+		"ear": "Hammer, Amboss und Steigbügel leiten den Schall vom Trommelfell zum Innenohr. Der Steigbügel ist der kleinste Knochen des Körpers.",
+		"torso": "53 Knochen: 24 Wirbel, 24 Rippen, das Brustbein und das Becken (2 Hüftbeine, Kreuzbein, Steißbein).",
+		"spine": "Frühstück um 7, Mittagessen um 12, Abendessen um 5: 7 Hals-, 12 Brust- und 5 Lendenwirbel. C1 (Atlas) trägt den Kopf; C2 (Axis) lässt ihn drehen.",
+		"ribcage": "Die Rippen 1 bis 7 sind echte Rippen (direkt mit dem Brustbein verbunden), 8 bis 10 falsche Rippen (über Knorpel verbunden), 11 und 12 freie Rippen.",
+		"pelvis": "Jedes Hüftbein besteht aus drei verschmolzenen Knochen: Darmbein, Sitzbein und Schambein. Das Kreuzbein besteht aus 5 verschmolzenen Wirbeln, das Steißbein meist aus 4.",
+		"arm": "10 Knochen: Schlüsselbein, Schulterblatt, Oberarmknochen, Speiche und Elle auf jeder Seite.",
+		"shoulder": "Schlüsselbein und Schulterblatt bilden den Schultergürtel. Das Schlüsselbein ist die einzige knöcherne Verbindung zwischen Arm und Rumpf.",
+		"armbones": "Die Speiche liegt auf der Daumenseite des Unterarms. Die Elle bildet die Spitze des Ellenbogens.",
+		"hand": "27 Knochen in jeder Hand: 8 Handwurzelknochen, 5 Mittelhandknochen, 14 Fingerknochen.",
+		"carpals": "Merkspruch: „Ein Kahn, der fährt im Mondenschein im Dreieck um das Erbsenbein. Vieleck groß, Vieleck klein, der Kopf, der muss am Haken sein.“ Kahnbein, Mondbein, Dreiecksbein, Erbsenbein, großes und kleines Vielecksbein, Kopfbein, Hakenbein.",
+		"metacarpals": "Die Mittelhandknochen werden von I bis V gezählt, beginnend am Daumen.",
+		"fingers": "Jeder Finger hat ein Grund-, Mittel- und Endglied. Der Daumen hat kein Mittelglied, daher hat jede Hand 14.",
+		"leg": "8 Knochen: Oberschenkelknochen, Kniescheibe, Schienbein und Wadenbein auf jeder Seite.",
+		"thigh": "Der Oberschenkelknochen ist der längste und stärkste Knochen des Körpers. Die Kniescheibe ist das größte Sesambein, ein Knochen, der in einer Sehne entsteht.",
+		"lowerleg": "Das Schienbein trägt das Körpergewicht. Das Wadenbein ist der dünne Knochen an der Außenseite des Unterschenkels.",
+		"foot": "26 Knochen in jedem Fuß: 7 Fußwurzelknochen, 5 Mittelfußknochen, 14 Zehenknochen.",
+		"tarsals": "7 Knochen: Sprungbein, Fersenbein, Kahnbein, Würfelbein und drei Keilbeine (inneres, mittleres, äußeres).",
+		"metatarsals": "Die Mittelfußknochen werden von I bis V gezählt, beginnend an der Großzehe.",
+		"toes": "Wie bei den Fingern: Grund-, Mittel- und Endglied, nur die Großzehe hat kein Mittelglied. 14 pro Fuß."
+	}
+}
