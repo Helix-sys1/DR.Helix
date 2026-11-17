@@ -2370,29 +2370,78 @@ export async function startAtlas(settings) {
 })();
 
 
-// نطق أسماء الأجزاء بالضغط مرتين
+// أزرار نطق اسم الجزء (عادي + بطيء)
 (function () {
-  function speak(text) {
+  function speak(text, rate) {
     if (!('speechSynthesis' in window) || !text) return;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(text.replace(/&/g, ' and '));
     u.lang = 'en-US';
-    u.rate = 0.85;
+    u.rate = rate;
     const voices = window.speechSynthesis.getVoices();
     const v = voices.find(x => x.lang.startsWith('en') && /natural|google|microsoft/i.test(x.name))
            || voices.find(x => x.lang.startsWith('en'));
     if (v) u.voice = v;
     window.speechSynthesis.speak(u);
   }
-  window.speakTerm = speak;
-
+  window.speakTerm = (t) => speak(t, 0.85);
   if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
   }
 
-  document.addEventListener('dblclick', (e) => {
-    let t = (window.getSelection().toString() || '').trim();
-    if (!t && e.target) t = (e.target.innerText || '').trim();
-    if (t && t.length <= 60) speak(t);
+  function findTitle() {
+    let best = null, bestSize = 0;
+    document.querySelectorAll('body *').forEach(el => {
+      if (el.classList.contains('helix-speak-btn') || el.children.length > 0) return;
+      const t = (el.textContent || '').trim();
+      if (t.length < 3 || t.length > 90) return;
+      const r = el.getBoundingClientRect();
+      if (r.width < 50 || r.height < 10 || r.top < 0 || r.top > 420) return;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === 'hidden' || cs.display === 'none') return;
+      const size = parseFloat(cs.fontSize) || 0;
+      if (size > bestSize) { best = el; bestSize = size; }
+    });
+    return best;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    function makeBtn(icon, title, rate) {
+      const b = document.createElement('button');
+      b.className = 'helix-speak-btn';
+      b.type = 'button';
+      b.title = title;
+      b.textContent = icon;
+      b.style.cssText = 'position:fixed;z-index:9999;display:none;width:38px;height:38px;border-radius:50%;border:1px solid #5fd0ee;background:#0f1a22;color:#fff;font-size:18px;cursor:pointer;';
+      b.addEventListener('click', () => {
+        const t = findTitle();
+        if (t) speak(t.textContent.trim(), rate);
+      });
+      document.body.appendChild(b);
+      return b;
+    }
+    const normalBtn = makeBtn('🔊', 'Pronounce', 0.85);
+    const slowBtn = makeBtn('🐢', 'Pronounce slowly', 0.5);
+
+    function place() {
+      const t = findTitle();
+      if (!t) { normalBtn.style.display = 'none'; slowBtn.style.display = 'none'; return; }
+      const tr = t.getBoundingClientRect();
+      let card = t.parentElement;
+      for (let i = 0; i < 4 && card; i++) {
+        const cr = card.getBoundingClientRect();
+        if (cr.width >= tr.width + 40 && cr.height >= tr.height + 40) break;
+        card = card.parentElement;
+      }
+      const cr = (card || t).getBoundingClientRect();
+      normalBtn.style.left = (cr.left + 44) + 'px';
+      normalBtn.style.top = (cr.top + 8) + 'px';
+      slowBtn.style.left = (cr.left + 88) + 'px';
+      slowBtn.style.top = (cr.top + 8) + 'px';
+      normalBtn.style.display = 'block';
+      slowBtn.style.display = 'block';
+    }
+    setInterval(place, 600);
+    window.addEventListener('resize', place);
   });
 })();
