@@ -2319,3 +2319,43 @@ export async function startAtlas(settings) {
     .catch(onModelError);
   requestAnimationFrame(tick);
 }
+// حقن بطاقة دكتور هيليكس تلقائياً في أي صفحة تشغيل
+window.addEventListener('DOMContentLoaded', () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <div class="helix-profile-trigger" onclick="openHelixCard()">
+      <img src="https://i.imgur.com/your-image.jpg" alt="دكتور هيليكس" class="trigger-avatar">
+      <span>د. هيليكس</span>
+    </div>
+
+    <div id="helixModal" class="helix-modal-overlay" onclick="closeHelixCard(event)">
+      <div class="helix-card" onclick="event.stopPropagation()">
+        <button class="helix-close-btn" onclick="closeHelixCardForce()">&times;</button>
+        <div class="helix-card-header">
+          <img src="https://i.imgur.com/your-image.jpg" alt="دكتور هيليكس" class="helix-avatar">
+          <h3>د. هيليكس</h3>
+          <span class="helix-badge">طالب طب بشري</span>
+        </div>
+        <div class="helix-card-body">
+          <p class="helix-university">جامعة سانت بطرسبرغ الحكومية</p>
+          <p class="helix-bio">مطور هذا النسخة التفاعلية لأتلساح التشريح البشري.</p>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(container);
+});
+
+function openHelixCard() {
+  document.getElementById('helixModal').style.display = 'flex';
+}
+
+function closeHelixCardForce() {
+  document.getElementById('helixModal').style.display = 'none';
+}
+
+function closeHelixCard(event) {
+  if (event.target.id === 'helixModal') {
+    document.getElementById('helixModal').style.display = 'none';
+  }
+}
